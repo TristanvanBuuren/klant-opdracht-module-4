@@ -1,5 +1,5 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . '/Module2/klant-opdracht-module-4/assets/core/db_connect.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_connect.php');
 
 ?>
 
