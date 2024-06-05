@@ -36,4 +36,11 @@ include($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_con
             <?php endif; ?>
         </ul>
     </nav>
-    
+    <?php
+    if (!isset($_SESSION['admin_ingelogd']) || $_SESSION['admin_ingelogd'] !== true) {
+        // Redirect naar uitloggen.php
+        $redirectUrl = "../login/uitloggen.php";
+        header("Location: " . $redirectUrl);
+        exit();
+    }
+    ?>

@@ -59,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $redirectUrl = "../admin/admin_account.php";
             header("Location: " . $redirectUrl);
             exit();
+            
         } else {
             $error_message = "Ongeldige gebruikersnaam of admin wachtwoord.";
         }
