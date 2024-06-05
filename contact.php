@@ -72,7 +72,7 @@ if (isset($_POST["submit"])) {
         wanneer het u uitkomt. Wij zijn u graag van dienst!
     </div>
     <div class="b">
-        <form>
+        <form action="contact.php" method="post">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Uw naam</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John Doe" name="naam">
@@ -104,6 +104,7 @@ if (isset($_POST["submit"])) {
                 <label for="exampleFormControlTextarea1" class="form-label">Vraag of opmerking</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text_input"></textarea>
             </div>
+            <input class="btn btn-primary" type="submit" name="submit" value="Versturen">
         </form>
     </div>
     <div class="c">
