@@ -11,7 +11,5 @@ include ('assets/core/header.php');
             <label for="exampleFormControlInput1" class="form-label">Email adress</label>
             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
         </div>
-
-
     </form>
 </main>
