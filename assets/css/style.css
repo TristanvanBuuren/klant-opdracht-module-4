@@ -21,3 +21,12 @@
     width: 50vw;
     /* background-color: blue; */
 }
+
+.logo{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+
+    align-items: center;
+    justify-content: center;
+}
