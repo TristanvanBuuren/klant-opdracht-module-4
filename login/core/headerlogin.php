@@ -27,7 +27,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_con
                 <li><a href="uitloggen.php">Uitloggen</a></li>
 
                 <?php elseif (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd'] === true): ?>
-                    <li><a href="../login/admin/admin_account.php">Admin Account</a></li>
+                    <li><a href="../admin/admin_account.php">Admin Account</a></li>
                 <li><a href="uitloggen.php">Uitloggen</a></li>
                 
             <?php else: ?>
