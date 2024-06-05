@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2024 at 11:46 AM
+-- Generation Time: Jun 05, 2024 at 12:23 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,17 @@ SET time_zone = "+00:00";
 --
 -- Database: `tuinman`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hoofdpagina`
+--
+
+CREATE TABLE `hoofdpagina` (
+  `foto` int(11) NOT NULL,
+  `review` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
