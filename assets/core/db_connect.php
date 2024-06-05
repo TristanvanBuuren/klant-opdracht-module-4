@@ -15,7 +15,7 @@ if ($con -> connect_errno) {
 }
 
 
-define("BASEURL","http://localhost/module2/tuinman/");
+define("BASEURL","http://localhost/klant-opdracht-module-4/");
 
 
 function prettyDump ( $var ) {
