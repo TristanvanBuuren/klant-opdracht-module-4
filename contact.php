@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 <?php
 include ('assets/core/header.php');
 ?>
@@ -17,4 +15,3 @@ include ('assets/core/header.php');
 
     </form>
 </main>
->>>>>>> Stashed changes
