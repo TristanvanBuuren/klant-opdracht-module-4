@@ -1,0 +1,23 @@
+.a {
+    display: flex;
+    width: 100vw;
+    height: fit-content;
+    flex-wrap: wrap;
+}
+
+.text-contact {
+    width: 100vw;
+    height: fit-content;
+
+    /* background-color: brown; */
+}
+
+.b {
+    width: 50vw;
+    /* background-color: blueviolet; */
+}
+
+.c {
+    width: 50vw;
+    /* background-color: blue; */
+}
