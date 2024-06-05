@@ -56,10 +56,9 @@ include ('assets/core/header.php');
         </div>
         <div class="links">
             <div class="links-text">Onze sociale media</div>
-            <div class="yt">
-                <div class="yt-logo">YT LOGO</div>
-                <div class="yt-link">https://</div>
+            <div class="logo yt">
+                <img class="yt-logo" src="assets\img\yt_logo.png" alt="YT LOGO">
+                <div class="yt-link logo-link">https://youtube.com/</div>
             </div>
         </div>
-    </div>
 </main>
