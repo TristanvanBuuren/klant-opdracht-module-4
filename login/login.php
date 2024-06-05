@@ -90,7 +90,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 }
 ?>
+<style>
+    body {
+  margin: 0;
+  padding: 0;
+  background-color: #17a2b8;
+  height: 100vh;
+}
 
+    </style>
     <?php
 include('core/footerlogin.php');
 ?>

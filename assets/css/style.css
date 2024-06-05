@@ -1,20 +1,23 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+.a {
+    display: flex;
+    width: 100vw;
+    height: fit-content;
+    flex-wrap: wrap;
 }
-.container {
-    max-width: 100%;
-    padding: 20px;
+
+.text-contact {
+    width: 100vw;
+    height: fit-content;
+
+    /* background-color: brown; */
 }
-.image-placeholder {
-    width: 100%;
-    max-width: 600px; 
-    margin: 0 auto;
+
+.b {
+    width: 50vw;
+    /* background-color: blueviolet; */
 }
-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+
+.c {
+    width: 50vw;
+    /* background-color: blue; */
