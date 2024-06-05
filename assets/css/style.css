@@ -10,7 +10,10 @@
     width: 100vw;
     height: fit-content;
 
-    /* background-color: brown; */
+    /* background-image: url('/klant-opdracht-module-4/assets/img/tuin2.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%; */
 }
 
 .b {
