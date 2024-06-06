@@ -1,3 +1,7 @@
+<?php
+include ('assets/core/header.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
