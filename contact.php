@@ -126,3 +126,6 @@ if (isset($_POST["submit"])) {
             </div>
         </div>
 </main>
+<?php
+include ('assets/core/footer.php');
+?>
