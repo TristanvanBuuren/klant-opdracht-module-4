@@ -27,15 +27,16 @@
                 <th>ID</th>
                 <th>Foto</th>
                 <th>Review</th>
+                <th>Persoon</th>
             </tr>
             <?php
             $counter = 1; // teller van de rij
-            $sql = "SELECT id, foto, review FROM hoofdpagina ORDER BY id ASC";
+            $sql = "SELECT id, foto, review, persoon FROM hoofdpagina ORDER BY id ASC";
             $liqry = $con->prepare($sql);
             if ($liqry === false) {
                 echo mysqli_error($con);
             } else {
-                $liqry->bind_result($id, $foto, $review);
+                $liqry->bind_result($id, $foto, $review, $persoon);
                 if ($liqry->execute()) {
                     $liqry->store_result();
                     while ($liqry->fetch()) {
@@ -46,6 +47,7 @@
                             <td><?php echo $id; ?></td>
                             <td><?php echo $foto; ?></td>
                             <td><?php echo $review; ?></td>
+                            <td><?php echo $persoon; ?></td>
                         </tr>
                         <?php
                         $counter++;

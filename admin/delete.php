@@ -14,6 +14,7 @@ include('core/headeradmin.php');
             <th>ID</th>
             <th>Foto</th>
             <th>Review</th>
+            <th>Persoon</th>
         </tr>
         <?php
         // Controleer of de id parameter is meegegeven
@@ -21,14 +22,14 @@ include('core/headeradmin.php');
             $id = $_GET['id'];
 
             // Query om alleen de rij met de opgegeven id op te halen
-            $sql = "SELECT id, foto, review FROM hoofdpagina WHERE id = ?";
+            $sql = "SELECT id, foto, review, persoon FROM hoofdpagina WHERE id = ?";
             $liqry = $con->prepare($sql);
             $liqry->bind_param('i', $id);
 
             if ($liqry === false) {
                 echo mysqli_error($con);
             } else {
-                $liqry->bind_result($id, $foto, $review);
+                $liqry->bind_result($id, $foto, $review, $persoon);
                 if ($liqry->execute()) {
                     $liqry->store_result();
                     if ($liqry->num_rows > 0) {
@@ -38,6 +39,7 @@ include('core/headeradmin.php');
                             <td><?php echo $id; ?></td>
                             <td><?php echo $foto; ?></td>
                             <td><?php echo $review; ?></td>
+                            <td><?php echo $persoon; ?></td>
                         </tr>
                         <?php
                     } else {
