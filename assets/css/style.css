@@ -34,3 +34,34 @@
     align-items: center;
     justify-content: center;
 }
+
+.tuin-category {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}
+
+.icon {
+    width: 15vw;
+    height: 15vw;
+
+    margin-inline: 40vw;
+}
+
+.tuin-category-text{
+    font-size: x-large;
+    font-weight: bold;
+
+    margin-left: 10vw;
+    width: 100vw;
+}
+
+.tuin-text {
+    width: 100vw;
+
+    margin-left: 10vw;
+    margin-bottom: 10vh;
+}
