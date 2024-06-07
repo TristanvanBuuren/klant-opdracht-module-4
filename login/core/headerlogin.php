@@ -17,7 +17,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_con
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
-    <title>Theorie</title>
+    <title>Tuinman</title>
 </head>
 <body>
 <nav>

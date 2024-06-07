@@ -11,7 +11,7 @@ include ('db_connect.php');
     <link rel="stylesheet" href="<?= BASEURL; ?>assets/css/style.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <title>Document</title>
+    <title>Tuinman</title>
 </head>
 <body>
 
