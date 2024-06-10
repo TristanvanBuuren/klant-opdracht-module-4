@@ -36,6 +36,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_con
             <?php endif; ?>
         </ul>
     </nav>
+    <button class="btn btn-primary">Admin thuispagina</button>
+    <button class="btn btn-primary"><a class="button-deco" href="./informatie/">Informatie pagina</a></button>
     <?php
     if (!isset($_SESSION['admin_ingelogd']) || $_SESSION['admin_ingelogd'] !== true) {
         // Redirect naar uitloggen.php

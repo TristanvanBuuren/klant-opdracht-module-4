@@ -113,3 +113,13 @@
   border: 1px solid #ffcccc;
   margin-bottom: 10px;
 }
+
+.button-deco {
+  color: white;
+  text-decoration: none;
+}
+
+.button-deco:hover {
+  color: white;
+  text-decoration: none;
+}

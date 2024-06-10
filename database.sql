@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2024 at 10:35 AM
+-- Generation Time: Jun 10, 2024 at 11:56 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -50,27 +50,21 @@ INSERT INTO `admin_login` (`id`, `username`, `password`) VALUES
 --
 
 CREATE TABLE `hoofdpagina` (
-  `id` int(11) NOT NULL,
   `foto` varchar(255) NOT NULL,
-  `review` text NOT NULL,
-  `persoon` varchar(255) NOT NULL
+  `review` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `hoofdpagina`
+-- Table structure for table `informatie`
 --
 
-INSERT INTO `hoofdpagina` (`id`, `foto`, `review`, `persoon`) VALUES
-(1, 'tuin1.png', 'Heel erg bedankt voor de efficiënte service, je was heel snel klaar en ik zal je nummer zeker behouden om je weer te gebruiken.', 'Hella Hoes'),
-(2, 'tuin2.png', 'Ga alsjeblieft door met de bezoeken aan het huis van mijn vader, want je doet geweldig werk!', 'Henk Haak'),
-(3, 'tuin3.png', 'Zoals u weet ben ik altijd tevreden geweest met de service die u de afgelopen jaren heeft verleend. Vertel me alstublieft wanneer u klaar bent om volgend jaar weer te beginnen met het maaien van mijn gazons, aangezien ik graag uw diensten wil blijven ontvangen.', 'Hans Hogendijk'),
-(4, 'tuin4.png', 'Bedankt voor de grondige opruimbeurt die u aan mijn tuin heeft uitgevoerd. De tuin is er enorm van opgeknapt en weer bruikbaar gemaakt. Nogmaals bedankt.', 'Hugo van Heren'),
-(5, 'tuin5.png', 'Mijn tuin was een mijn jungle voor en achter. Ik ben zo blij met het resultaat; u heeft zo hard gewerkt en alles mooi en netjes achtergelaten. Aarzel niet om mijn opmerkingen te gebruiken in toekomstige advertenties. Nogmaals bedankt voor al je harde werk en efficiëntie!', 'Helga Hagel'),
-(6, 'tuin6.png', 'We zijn erg blij met ons nieuwe dak van de schuur en het andere werk dat tot een zeer hoge standaard is voltooid. Heel erg bedankt voor uw medewerking!', 'Hopke Havermout'),
-(7, 'tuin7.png', '', ''),
-(8, 'tuin8.png', '', ''),
-(9, 'tuin9.png', '', ''),
-(10, 'tuin10.png', '', '');
+CREATE TABLE `informatie` (
+  `info_id` int(11) NOT NULL,
+  `info_type` int(11) NOT NULL,
+  `info_tekst` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -103,10 +97,10 @@ ALTER TABLE `admin_login`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `hoofdpagina`
+-- Indexes for table `informatie`
 --
-ALTER TABLE `hoofdpagina`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `informatie`
+  ADD PRIMARY KEY (`info_id`);
 
 --
 -- Indexes for table `login`
@@ -125,10 +119,10 @@ ALTER TABLE `admin_login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `hoofdpagina`
+-- AUTO_INCREMENT for table `informatie`
 --
-ALTER TABLE `hoofdpagina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `informatie`
+  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `login`
