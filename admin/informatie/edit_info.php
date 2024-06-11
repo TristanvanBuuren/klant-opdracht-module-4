@@ -87,9 +87,9 @@ if ($liqry === false) {
                 </div>
                 <div class="form-floating mb-3">
                     <select class="form-control" id="floatingInput" name="info_type">
-                        <option selected>Open to pick an option</option>
-                        <option value="1">1 - Contact</option>
-                        <option value="2">2 - Werktijden</option>
+                        <!-- <option selected>Open to pick an option</option> -->
+                        <option value="1" <?php if($info_type === 1){echo "selected"; }?>>1 - Contact</option>
+                        <option value="2" <?php if($info_type === 2){echo "selected"; }?>>2 - Werktijden</option>
                     </select>
                     <label for="floatingInput">Info Type</label>
                 </div>
