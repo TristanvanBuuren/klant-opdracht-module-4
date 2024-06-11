@@ -16,6 +16,8 @@ if ($con -> connect_errno) {
 
 
 define("BASEURL","http://localhost/klant-opdracht-module-4/");
+define("BASEURL_LOGIN","http://localhost/klant-opdracht-module-4/login");
+define("BASEURL_CMS","http://localhost/klant-opdracht-module-4/admin/");
 
 
 function prettyDump ( $var ) {

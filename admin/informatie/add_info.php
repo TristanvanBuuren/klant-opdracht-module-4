@@ -73,8 +73,8 @@ if (isset($_POST["submit"])) {
             <option selected>Open to pick an option</option>
             <option value="1">1 - Contact</option>
             <option value="2">2 - Werktijden</option>
-            <!-- <option value="3">3 - Yen</option>
-            <option value="4">4 - Pond</option>
+            <!-- <option value="3">3 - Sociale Media</option> -->
+            <!-- <option value="4">4 - Pond</option>
             <option value="5">5 - Roebel</option> -->
         </select>
         <label for="floatingInput">Info Type</label>
