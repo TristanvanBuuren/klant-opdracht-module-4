@@ -21,7 +21,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_con
 <body>
 <nav>
         <ul>
-            <li><a href="../index.php">Home</a></li>
+            <li><a href="<?= BASEURL ?>index.php">Home</a></li>
             <?php if (isset($_SESSION['ingelogd']) && $_SESSION['ingelogd'] === true): ?>
                 <li><a href="account.php">Account</a></li>
                 <li><a href="uitloggen.php">Uitloggen</a></li>

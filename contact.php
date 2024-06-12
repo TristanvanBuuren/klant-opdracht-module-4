@@ -146,7 +146,7 @@ if (isset($_POST["submit"])) {
         </div>
         <div class="links">
             <div class="links-text">Onze sociale media</div>
-            <div class="logo yt">
+            <div class="logo-sm yt">
                 <img class="yt-logo" src="assets\img\yt_logo.png" alt="YT LOGO">
                 <div class="yt-link logo-link">https://youtube.com/</div>
             </div>

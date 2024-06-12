@@ -1,5 +1,6 @@
 <div class="footer">
     <div class="footer-contact">
+        Neem contact met ons op: <br><br>
         <?php
         $sql = "SELECT info_tekst FROM informatie WHERE info_type = 1";
         $liqry = $con->prepare($sql);
@@ -18,6 +19,7 @@
         ?>
     </div>
     <div class="footer-dagen">
+    Onze Openings tijden: <br><br>
         <?php
         $sql = "SELECT info_tekst FROM informatie WHERE info_type = 2";
         $liqry = $con->prepare($sql);
