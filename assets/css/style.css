@@ -1,4 +1,48 @@
-/* Contact pagina */
+/* MARK: HEADER 
+*/
+
+.header {
+    display: flex;
+
+    width: 100vw;
+    height: 15vh;
+
+    border: .2vw solid black;
+
+    gap: 1vw;
+
+    padding: .5vw;
+}
+
+.e {
+    display: flex;
+    width: 25vw;
+}
+
+.f {
+    display: flex;
+    justify-content: space-around;
+
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+
+    width: 30vw;
+}
+
+.g {
+    display: flex;
+    justify-content: start;
+    gap: 1vw;
+    width: 55vw;
+
+    padding-left: 2vw;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+}
+
+/* MARK: Contact pagina 
+*/
+
 .a {
     display: flex;
     width: 100vw;
@@ -9,21 +53,14 @@
 .text-contact {
     width: 100vw;
     height: fit-content;
-
-    /* background-image: url('/klant-opdracht-module-4/assets/img/tuin2.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%; */
 }
 
 .b {
     width: 50vw;
-    /* background-color: blueviolet; */
 }
 
 .c {
     width: 50vw;
-    /* background-color: blue; */
 }
 
 .logo-sm {
@@ -51,7 +88,9 @@
     margin-inline: 40vw;
 }
 
-/* Design pagina */
+/* MARK: Design pagina 
+*/
+
 .tuin-category-text {
     font-size: x-large;
     font-weight: bold;
@@ -67,7 +106,9 @@
     margin-bottom: 10vh;
 }
 
-/* FOOTER */
+/* MARK: FOOTER 
+*/
+
 .footer {
     background-color: rgb(24, 18, 63);
     width: 100vw;
@@ -84,7 +125,6 @@
     padding-left: 2vw;
 
     color: white;
-    /* background-color: green; */
 }
 
 .footer-dagen {
@@ -93,62 +133,14 @@
     padding-top: 5vh;
 
     color: white;
-    /* background-color: darkgray; */
 }
 
 .d {
     width: 32vw;
-    /* background-color: blue; */
 }
 
-.header {
-    display: flex;
-
-    width: 100vw;
-    height: 15vh;
-
-    border: .2vw solid black;
-
-    gap: 1vw;
-
-    padding: .5vw;
-
-    /* background-color: aqua; */
-}
-
-.e {
-    display: flex;
-    width: 25vw;
-
-    /* background-color: brown; */
-}
-
-.f {
-    display: flex;
-    justify-content: space-around;
-
-    padding-top: 1.5vh;
-    padding-bottom: 1.5vh;
-
-    width: 30vw;
-
-    /* background-color: blue; */
-}
-
-.g {
-    display: flex;
-    justify-content: start;
-    gap: 1vw;
-    width: 55vw;
-
-    padding-left: 2vw;
-    padding-top: 1.5vh;
-    padding-bottom: 1.5vh;
-    
-    /* background-color: crimson; */
-}
-
-.logo-website {}
+/* MARK: Algemeen
+*/
 
 .button-deco {
     color: white;
