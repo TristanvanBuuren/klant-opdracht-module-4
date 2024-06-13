@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2024 at 02:02 PM
+-- Generation Time: Jun 13, 2024 at 08:52 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -84,6 +84,18 @@ CREATE TABLE `informatie` (
   `info_tekst` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `informatie`
+--
+
+INSERT INTO `informatie` (`info_id`, `info_type`, `info_tekst`) VALUES
+(1, 1, 'Tel: +31 6 12 34 56 78'),
+(2, 1, 'Sms: 06 00 00 00 00'),
+(3, 1, 'email: HendrikHogendijk@klantopdract.glu.nl'),
+(4, 2, 'Maandag - vrijdag: 07.00 - 17.00 uur'),
+(5, 2, 'Zaterdag: Op afspraak'),
+(6, 2, 'Zondag: Gesloten');
+
 -- --------------------------------------------------------
 
 --
@@ -152,7 +164,7 @@ ALTER TABLE `hoofdpagina`
 -- AUTO_INCREMENT for table `informatie`
 --
 ALTER TABLE `informatie`
-  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `login`
