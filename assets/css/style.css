@@ -7,7 +7,9 @@
     width: 100vw;
     height: 15vh;
 
-    border: .2vw solid black;
+    /* border: .2vw solid black; */
+    background-color: rgb(24, 18, 63);
+    color: white;
 
     gap: 1vw;
 

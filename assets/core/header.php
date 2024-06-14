@@ -34,7 +34,7 @@ include ('db_connect.php');
             <?php endif; ?>
         </div>
         <div class="g">
-            <button class="btn btn-primary button-deco">Design</button>
-            <button class="btn btn-primary button-deco">Contact</button>
+            <button class="btn btn-primary button-deco"><a href="<?= BASEURL ?>design.php" class="button-deco">Design</a></button>
+            <button class="btn btn-primary button-deco"><a href="<?= BASEURL ?>contact.php" class="button-deco">Contact</a></button>
         </div>
     </div>
