@@ -25,7 +25,7 @@ include ('db_connect.php');
             <button class="btn btn-primary"><a href="<?= BASEURL ?>index.php" class="button-deco">Home</a></button>
             <?php if (isset($_SESSION['ingelogd']) && $_SESSION['ingelogd'] === true): ?>
                 <button class="btn btn-primary"><a href="account.php" class="button-deco">Account</a></button>
-                <button class="btn btn-primary"><a href="uitloggen.php" class="button-deco">Uitloggen</a></button>
+                <button class="btn btn-primary"><a href="<?= BASEURL_LOGIN ?>uitloggen.php" class="button-deco">Uitloggen</a></button>
             <?php elseif (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd'] === true): ?>
                 <button class="btn btn-primary"><a href="<?= BASEURL_CMS ?>index.php" class="button-deco">Admin Account</a></button>
                 <button class="btn btn-primary"><a href="<?= BASEURL_LOGIN ?>uitloggen.php" class="button-deco">Uitloggen</a></button>
