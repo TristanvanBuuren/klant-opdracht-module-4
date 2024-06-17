@@ -42,6 +42,52 @@
     padding-bottom: 1.5vh;
 }
 
+/* MARK: Index Pagina
+ */
+
+.content-4 {
+    width: 100vw;
+    height: 50vh;
+
+    /* gap: 20vw; */
+    display: flex;
+
+    background-color: blanchedalmond;
+    
+}
+
+.top {
+    margin-left: 10vw;
+    gap: 20vw;
+}
+
+.tl {
+    width: 40vw;
+    height: 20vw;
+
+    background-color: blue;
+}
+
+.tr {
+    width: 40vw;
+    height: 20vw;
+    background-color: brown;
+}
+
+.bottom {}
+
+.bl {
+    width: 40vw;
+    height: 20vw;
+    background-color:blueviolet;
+}
+
+.br {
+    width: 40vw;
+    height: 20vw;
+    background-color: aquamarine;
+}
+
 /* MARK: Contact pagina 
 */
 
