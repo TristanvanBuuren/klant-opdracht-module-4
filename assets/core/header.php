@@ -16,7 +16,7 @@ include ('db_connect.php');
     <title>Tuinman</title>
 </head>
 
-<body>
+<body class="bg-6F8587">
     <div class="header">
         <div class="e">
             <img src="https://placehold.co/50x50" alt="PLACEHOLDER" class="logo-website header-logo">
