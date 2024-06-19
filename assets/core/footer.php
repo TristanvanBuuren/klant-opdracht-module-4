@@ -45,7 +45,7 @@
         afspraak <br> Zondag: Gesloten
     </div>
 </div> -->
-
+<script src="<?= BASEURL; ?>assets/js/slideshow.js"></script>
 </body>
 <script></script>
 
