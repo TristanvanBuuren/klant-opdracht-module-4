@@ -1,7 +1,7 @@
 <?php
 include ('assets/core/header.php');
 ?>
-<main class="mw-100vw">
+<main>
     <div class="tuin-category tuin-ontwerp">
         <img class="icon icon-tuinontwerp" src="assets/img/icon-tuinontwerp.png" alt="icon tuinontwerp">
         <div class="tuin-teksts">
