@@ -11,12 +11,13 @@ include($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_con
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= BASEURL;?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= BASEURL;?>assets/css/login.css">
+    <link rel="stylesheet" href="<?= BASEURL;?>assets/css/style.css">
     
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
-    <title>Theorie</title>
+    <title>Tuinman</title>
 </head>
 <body>
 <nav>
@@ -27,7 +28,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_con
                 <li><a href="uitloggen.php">Uitloggen</a></li>
 
                 <?php elseif (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd'] === true): ?>
-                    <li><a href="../login/admin/admin_account.php">Admin Account</a></li>
+                    <li><a href="../admin/admin_account.php">Admin Account</a></li>
                 <li><a href="uitloggen.php">Uitloggen</a></li>
                 
             <?php else: ?>

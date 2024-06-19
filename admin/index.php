@@ -1,26 +1,9 @@
-<?php
-    include('core/headeradmin.php');
-    // echo BASEURL_CMS;
+<?php 
+include('core/headeradmin.php');
+// echo BASEURL_CMS
 ?>
 
-<div class="header-admin">
-    <?php
-   
-    if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
-        // De gebruiker is ingelogd, laat de inhoud van admin_account.php zien
-    } else {
-        // Redirect naar adminlogin.php
-        header("Location: ../login/adminlogin.php");
-        exit();
-    }
-    ?>
-
-    <head>
-        <title>Producten</title>
-        <link rel="stylesheet" href="../assets/css/style.css">
-    </head>
-
-    <div class="row">
+<div class="row">
         <table class="table">
             <tr>
                 <th>EDIT</th>
@@ -59,13 +42,3 @@
             ?>
         </table>
     </div>
-
-    <div class="row">
-        <div class="col-12">
-            <a href="add.php"><button class="button3">Toevoegen</button></a>
-        </div>
-    </div>
-
-<?php
-    include('core/footeradmin.php');
-?>

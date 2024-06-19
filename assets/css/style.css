@@ -1,67 +1,214 @@
+/* MARK: HEADER 
+*/
+
+.header {
+  display: flex;
+
+  width: 100vw;
+  height: 15vh;
+
+  /* border: .2vw solid black; */
+  background-color: rgb(24, 18, 63);
+  color: white;
+
+  gap: 1vw;
+
+  padding: 0.5vw;
+}
+
+.e {
+  display: flex;
+  width: 25vw;
+}
+
+.f {
+  display: flex;
+  justify-content: space-around;
+
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+
+  width: 30vw;
+}
+
+.g {
+  display: flex;
+  justify-content: start;
+  gap: 1vw;
+  width: 55vw;
+
+  padding-left: 2vw;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+}
+
+/* MARK: Index Pagina
+ */
+
+ .slideshow {
+    position: relative;
+    width: 100vw;
+    height: 60vh; /* Adjust height as needed */
+    overflow: hidden;
+  }
+  .slideshow img {
+    position: absolute;
+    width: 100vw;
+    height: 50vw;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  .slideshow img.active {
+    opacity: 0.7;
+  }
+  .slide-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px; /* Pas de tekstgrootte aan naar wens */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 80%;
+    opacity: 1;
+    z-index: 1; /* Zorg ervoor dat de tekst boven de afbeelding wordt weergegeven */
+  }
+  @media (max-width: 768px) {
+    .slide-text {
+      font-size: 24px; /* Kleinere tekstgrootte voor mobiele apparaten */
+    }
+  }
+
+/* MARK: Contact pagina 
+*/
 
 .a {
-    display: flex;
-    width: 100vw;
-    height: fit-content;
-    flex-wrap: wrap;
+  display: flex;
+  width: 100vw;
+  height: fit-content;
+  flex-wrap: wrap;
 }
 
 .text-contact {
-    width: 100vw;
-    height: fit-content;
-
-    /* background-color: brown; */
+  width: 100vw;
+  height: fit-content;
 }
 
 .b {
-    width: 50vw;
-    /* background-color: blueviolet; */
+  width: 50vw;
 }
 
 .c {
-    width: 50vw;
-    /* background-color: blue; */
+  width: 50vw;
 }
 
-        .slideshow {
-            position: relative;
-            width: 100%;
-            height: 400px; /* Adjust height as needed */
-            overflow: hidden;
-        }
-        .slideshow img {
-            position: absolute;
-            width: 100%;
-            height: auto;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .slideshow img.active {
-            opacity: 1;
-        }
-        
+.logo-sm {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
 
-/* responsive css */
-@media only screen and (max-width: 768px) {
-    .container {
-         flex-direction: column;
-     }
-    .section {
-         flex-basis: 100%;
-         margin: 10px;
-     }
-    .scroll-container {
-         max-height: none;
-     }
- }
- @media only screen and (max-width: 480px) {
-    .section {
-         padding: 10px;
-     }
-     h2 {
-         font-size: 18px;
-     }
-     p {
-         font-size: 14px;
-     }
- }
+  align-items: center;
+  justify-content: center;
+}
+
+/* MARK: Design pagina 
+*/
+
+.tuin-category {
+    width: 95vw;
+    max-width: 95vw;
+    height: fit-content;
+    display: flex;
+
+    margin-top: 10vh;
+    margin-left: 5vw;
+}
+
+.tuin-category:last-of-type {
+  margin-bottom: 10vh;
+}
+
+.tuin-teksts {
+  flex-wrap: wrap;
+
+    padding-top: 4vw;
+
+    max-width: 50vw;
+}
+
+.tuin-category-text {
+  font-size: x-large;
+  font-weight: bold;
+
+    margin-left: 2vw;
+    width: fit-content;
+}
+
+.tuin-text {
+  margin-left: 2vw;
+}
+
+.icon {
+    width: 10vw;
+    height: 10vw;
+
+    /* margin-left: 10vw; */
+}
+
+/* MARK: FOOTER 
+*/
+
+.footer {
+  margin-bottom: 0vh;
+
+  background-color: rgb(24, 18, 63);
+  width: 100vw;
+  height: 35vh;
+
+  display: flex;
+  gap: 2vw;
+}
+
+.footer-contact {
+  width: 32vw;
+
+  padding-top: 5vh;
+  padding-left: 2vw;
+
+  color: white;
+}
+
+.footer-dagen {
+  width: 32vw;
+
+  padding-top: 5vh;
+
+  color: white;
+}
+
+.d {
+  width: 32vw;
+}
+
+/* MARK: Algemeen
+*/
+
+.button-deco {
+  color: white;
+  text-decoration: none;
+}
+
+.button-deco:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.mw-100vw {
+  max-width: 100vw;
+}
+
+.bg-6F8587 {
+    background-color: #6F8587;
+}
+
