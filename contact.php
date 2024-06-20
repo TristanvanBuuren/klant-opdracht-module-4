@@ -75,84 +75,105 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
-<main class="a">
-    <div class="text-contact">We streven ernaar om constant in contact te staan met onze klanten totdat de klus geklaard
-        is. Als u vragen of
-        speciale verzoeken heeft, stuur ons dan een bericht. Voor een vrijblijvende offerte kunt u contact met ons
-        opnemen
-        wanneer het u uitkomt. Wij zijn u graag van dienst!
-    </div>
-    <div class="b">
-        <form action="contact.php" method="post">
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Uw naam</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John Doe" name="naam" value="<?php echo $naam; ?>">
+<
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neem Contact Op</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="assets/img/hark-removebg-preview.png" alt="Hendrik Hogendijk Logo" width="40" height="40">
             </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">@</span>
-                <input type="email" class="form-control" placeholder="name@example.com" aria-label="Email"
-                    aria-describedby="basic-addon1" name="email" value="<?php echo $email; ?>">
+            <div>
+                <h1>Hendrik Hogendijk Project</h1>
+                <p>Uw Vertrouwde Partner voor Excellentie</p>
             </div>
+        </div>
+    </header>
+    <div class="container">
+        <form action="contact_form_handler.php" method="post">
+            <label for="name">Naam:</label>
+            <input type="text" id="name" name="name" placeholder="Uw Naam" required>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">+31</span>
-                <input type="number" class="form-control" placeholder="0 6 00 00 00 00" aria-label="tel"
-                    aria-describedby="basic-addon1" id="telefoon" name="tel" value="<?php echo $tel; ?>">
-            </div>
+            <label for="email">E-mailadres:</label>
+            <input type="email" id="email" name="email" placeholder="Uw E-mail" required>
 
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="adress" value="<?php echo $adress; ?>">
-            </div>
+            <label for="message">Uw Bericht:</label>
+            <textarea id="message" name="message" placeholder="Voer uw vraag of bericht in" required></textarea>
 
-            <div class="col-md-6">
-                <label for="inputCity" class="form-label">stad</label>
-                <input type="text" class="form-control" id="inputCity" name="stad" value="<?php echo $stad; ?>">
-            </div>
-
-            <div class="col-md-2">
-                <label for="inputZip" class="form-label">postcode</label>
-                <input type="text" class="form-control" id="inputZip" name="postcode" value="<?php echo $postcode; ?>">
-            </div>
-
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Vraag of opmerking</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="gg"><?php echo $gg; ?></textarea>
-            </div>
-
-            <input class="btn btn-primary" type="submit" name="submit" value="Versturen">
+            <button type="submit">Verstuur</button>
         </form>
-
-        <?php
-        if (!empty($errors)) {
-            foreach ($errors as $error) {
-                echo "<p style='color:red;'>$error</p>";
-            }
-        }
-        ?>
-    </div>
-
-    <div class="c">
-        <div class="tel-nummer">
-            <div class="tel-nummer-text">Telefoon nummer:</div>
-            <div class="tel-nummer-nummer">sss</div>
-        </div>
-        <div class="openings-tijden">
-            <div class="openings-tijden-text">Onze openings tijden</div>
-            <div class="openings-tijden-werk-week">Maandag - vrijdag: 07.00 - 17.00 uur</div>
-            <div class="openings-tijden-zaterdag">Zaterdag: Op afspraak</div>
-            <div class="openings-tijden-zondag">Zondag: Gesloten</div>
-        </div>
-        <div class="links">
-            <div class="links-text">Onze sociale media</div>
-            <div class="logo-sm yt">
-                <img class="yt-logo" src="assets\img\yt_logo.png" alt="YT LOGO">
-                <div class="yt-link logo-link">https://youtube.com/</div>
+        <div class="contact-info">
+            <h2>Neem Contact Op</h2>
+            <p><b>TEL:</b> +31 6 12 34 56 78</p>
+            <p><b>SMS:</b> 06 00 00 00 00</p>
+            <p><b>E-mail:</b> hendrikhogend@klaopdracht.nl</p>
+            <div class="social-links">
+                <a href="#">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </div>
+            <p><b>Openingstijden:</b></p>
+            <p>Maandag-Vrijdag: 7:00-17:00</p>
+            <p>Zaterdag: Op afspraak</p>
+            <p>Zondag: Gesloten</p>
+            <img src="assets/img/klant.png" alt="Hendrik Hogendijk" width="150" height="100">
         </div>
     </div>
-</main>
+</body>
+</html>
+<?php
+
+// Get the form fields and remove whitespace
+$name = strip_tags(trim($_POST["name"]));
+$name = str_replace(array("\r","\n"),array(" "," "),$name);
+$email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+$message = trim($_POST["message"]);
+
+// Check that data was submitted to the mailer
+if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    // Set a 400 (bad request) response code and exit
+    http_response_code(400);
+    echo "Er is iets fout gegaan. Controleer uw invulvelden en probeer het opnieuw.";
+    exit;
+}
+
+// Set the recipient email address
+$recipient = "hendrikhogend@klaopdracht.nl";
+
+// Set the email subject
+$subject = "Contactformulier van $name";
+
+// Build the email message
+$message = "Naam: $name\n";
+$message .= "E-mailadres: $email\n";
+$message .= "Bericht: $message";
+
+// Send the email
+if (mail($recipient, $subject, $message)) {
+    // Set a 200 (ok) response code and exit
+    http_response_code(200);
+    echo "Bedankt voor uw bericht! Wij zullen zo snel mogelijk reageren.";
+    exit;
+} else {
+    // Set a 500 (internal server error) response code and exit
+    http_response_code(500);
+    echo "Er is iets fout gegaan. Onze excuses voor het ongemak.";
+    exit;
+}
+
+?>
 <?php
 include('assets/core/footer.php');
 ?>
