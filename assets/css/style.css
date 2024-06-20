@@ -155,6 +155,28 @@
 /* MARK: Diesten pagina 
 */
 
+.introductie {
+    padding-top: 2vh;
+    padding-left: 5vh;
+    display: flex;
+}
+
+.introductie-foto {
+    width: 25vh;
+    height: 25vh;
+
+    border-radius: 20%;
+}
+
+.introductie-text {
+    font-size: 28px;
+    font-weight: 600;
+
+    color: black;
+
+    align-self: flex-end;
+}
+
 .tuin-category {
     width: 95vw;
     max-width: 95vw;

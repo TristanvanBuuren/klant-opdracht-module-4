@@ -2,6 +2,10 @@
 include ('assets/core/header.php');
 ?>
 <main>
+    <div class="introductie">
+        <img class="introductie-foto" src="assets/img/henrik.png">
+        <div class="introductie-text">Hallo, ik ben Henrik Hogendijk en dit is wat ik doe en kan:</div>
+    </div>
     <div class="tuin-category tuin-ontwerp">
         <img class="icon icon-tuinontwerp" src="assets/img/icon-tuinontwerp.png" alt="icon tuinontwerp">
         <div class="tuin-teksts">
