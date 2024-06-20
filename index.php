@@ -15,6 +15,12 @@ include ('assets/core/header.php');
             </div>
         <?php } ?>
     </div>
+    <div class="reviews">
+        <div class="review">
+            <div class="review-name">John Doe</div>
+            <div class="review-text">Very nice.</div>
+        </div>
+    </div>
 </main>
 
 

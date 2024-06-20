@@ -77,11 +77,47 @@
     opacity: 1;
     z-index: 1; /* Zorg ervoor dat de tekst boven de afbeelding wordt weergegeven */
   }
-  
+
   @media (max-width: 768px) {
     .slide-text {
       font-size: 24px; /* Kleinere tekstgrootte voor mobiele apparaten */
     }
+  }
+
+  .reviews {
+    width: 100vw;
+    height: 20vh;
+
+    /* display: flex; */
+    margin-bottom: 4vh;
+  }
+
+  .review {
+    margin-inline: 30vw;
+    margin-top: 4vh;
+    padding-left: 1vw;
+
+    width: 40vw;
+    height: 20vh;
+
+    background-color: white;
+    border: black solid 1px;
+    border-radius: 10px;
+  }
+
+  .review-name{
+    height: 4vh;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    /* background-color: blue; */
+  }
+
+  .review-text {
+    padding-top: 1vh;
+    padding-left: 1vh;
+    height: 16vh;
   }
 
 /* MARK: Contact pagina 
