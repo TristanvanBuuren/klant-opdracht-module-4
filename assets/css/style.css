@@ -51,6 +51,7 @@
     height: 60vh; /* Adjust height as needed */
     overflow: hidden;
   }
+
   .slideshow img {
     position: absolute;
     width: 100vw;
@@ -58,9 +59,11 @@
     opacity: 0;
     transition: opacity 1s ease-in-out;
   }
+
   .slideshow img.active {
     opacity: 0.7;
   }
+
   .slide-text {
     position: absolute;
     top: 50%;
@@ -74,6 +77,7 @@
     opacity: 1;
     z-index: 1; /* Zorg ervoor dat de tekst boven de afbeelding wordt weergegeven */
   }
+  
   @media (max-width: 768px) {
     .slide-text {
       font-size: 24px; /* Kleinere tekstgrootte voor mobiele apparaten */
