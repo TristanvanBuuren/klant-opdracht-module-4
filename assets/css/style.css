@@ -41,6 +41,7 @@
     background-color: rgb(17, 13, 46);
     /* background: linear-gradient(to right, rgba(0, 0, 255, 1), rgba(255, 0, 0, 0.5)); */
     box-shadow: 0px 0px 20px 10px rgb(17, 13, 46);
+    font-weight: 700;
 }
 
 .btn-middle {
@@ -112,7 +113,8 @@
 .reviews {
   position: relative;
   width: 40vw;
-  height: 20vh;
+  min-height: 20vh;
+  height: fit-content;
   margin-bottom: 5vh;
 }
 
@@ -122,7 +124,8 @@
   padding-left: 1vw;
 
   width: 40vw;
-  height: 20vh;
+  height: fit-content;
+  min-height: 20vh;
   opacity: 0;
   background-color: white;
   border: black solid 1px;
@@ -142,7 +145,8 @@
 .review-text {
   padding-top: 1vh;
   padding-left: 1vh;
-  height: 16vh;
+  min-height: 16vh;
+  height: fit-content;
 }
 
 .review.active {
