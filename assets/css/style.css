@@ -31,6 +31,23 @@
   width: 30vw;
 }
 
+.nav-buttons {
+    background-color: rgb(24, 18, 63);
+    border: none;
+}
+
+.nav-buttons:hover {
+    cursor: pointer;
+    background-color: rgb(17, 13, 46);
+    /* background: linear-gradient(to right, rgba(0, 0, 255, 1), rgba(255, 0, 0, 0.5)); */
+    box-shadow: 0px 0px 20px 10px rgb(17, 13, 46);
+}
+
+.btn-middle {
+    border-left: gray 1px solid;
+    border-right: gray 1px solid;
+}
+
 .g {
   display: flex;
   justify-content: start;

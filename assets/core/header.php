@@ -24,8 +24,8 @@ include ('db_connect.php');
             <div class="header-name">Henrik De Hovenier's Website</div>
         </div>
         <div class="f">
-            <button class="btn btn-primary"><a href="<?= BASEURL ?>index.php" class="button-deco">Home</a></button>
-            <button class="btn btn-primary button-deco"><a href="<?= BASEURL ?>diensten.php" class="button-deco">Diensten</a></button>
-            <button class="btn btn-primary button-deco"><a href="<?= BASEURL ?>contact.php" class="button-deco">Contact</a></button>
+            <button class="btn-left nav-buttons"><a href="<?= BASEURL ?>index.php" class="button-deco">Home</a></button>
+            <button class="btn-middle nav-buttons"><a href="<?= BASEURL ?>diensten.php" class="button-deco">Diensten</a></button>
+            <button class="btn-right nav-buttons"><a href="<?= BASEURL ?>contact.php" class="button-deco">Contact</a></button>
         </div>
     </div>
