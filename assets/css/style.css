@@ -45,81 +45,81 @@
 /* MARK: Index Pagina
  */
 
- .slideshow {
-    position: relative;
-    width: 100vw;
-    height: 60vh; /* Adjust height as needed */
-    overflow: hidden;
-  }
+.slideshow {
+  position: relative;
+  width: 100vw;
+  height: 60vh; /* Adjust height as needed */
+  overflow: hidden;
+}
 
-  .slideshow img {
-    position: absolute;
-    width: 100vw;
-    height: 50vw;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
+.slideshow img {
+  position: absolute;
+  width: 100vw;
+  height: 50vw;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
 
-  .slideshow img.active {
-    opacity: 0.7;
-  }
+.slideshow img.active {
+  opacity: 0.7;
+}
 
+.slide-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px; /* Pas de tekstgrootte aan naar wens */
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 80%;
+  opacity: 1;
+  z-index: 1; /* Zorg ervoor dat de tekst boven de afbeelding wordt weergegeven */
+}
+
+@media (max-width: 768px) {
   .slide-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 36px; /* Pas de tekstgrootte aan naar wens */
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    width: 80%;
-    opacity: 1;
-    z-index: 1; /* Zorg ervoor dat de tekst boven de afbeelding wordt weergegeven */
+    top: 15vh;
+    font-size: 24px; /* Kleinere tekstgrootte voor mobiele apparaten */
   }
+}
 
-  @media (max-width: 768px) {
-    .slide-text {
-        top: 15vh;
-        font-size: 24px; /* Kleinere tekstgrootte voor mobiele apparaten */
-    }
-  }
+.reviews {
+  width: 100vw;
+  height: 20vh;
 
-  .reviews {
-    width: 100vw;
-    height: 20vh;
+  /* display: flex; */
+  margin-bottom: 4vh;
+}
 
-    /* display: flex; */
-    margin-bottom: 4vh;
-  }
+.review {
+  margin-inline: 30vw;
+  margin-top: 4vh;
+  padding-left: 1vw;
 
-  .review {
-    margin-inline: 30vw;
-    margin-top: 4vh;
-    padding-left: 1vw;
+  width: 40vw;
+  height: 20vh;
 
-    width: 40vw;
-    height: 20vh;
+  background-color: white;
+  border: black solid 1px;
+  border-radius: 10px;
+}
 
-    background-color: white;
-    border: black solid 1px;
-    border-radius: 10px;
-  }
+.review-name {
+  height: 4vh;
 
-  .review-name{
-    height: 4vh;
+  font-size: 20px;
+  font-weight: 600;
 
-    font-size: 20px;
-    font-weight: 600;
+  /* background-color: blue; */
+}
 
-    /* background-color: blue; */
-  }
-
-  .review-text {
-    padding-top: 1vh;
-    padding-left: 1vh;
-    height: 16vh;
-  }
+.review-text {
+  padding-top: 1vh;
+  padding-left: 1vh;
+  height: 16vh;
+}
 
 /* MARK: Contact pagina 
 */
@@ -156,104 +156,104 @@
 /* MARK: Diesten pagina 
 */
 
-@media (max-width: 768px){
-    .introductie {
-        /* padding-top: 2vh; */
-        /* padding-left: 5vh; */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .introductie-foto {
-        width: 25vh;
-        height: 25vh;
-    
-        border-radius: 20%;
-    }
-    
-    .introductie-text {
-        font-size: 1.8em;
-        font-weight: 600;
-    
-        color: black;
-
-        text-align: center;
-    }
-
-    .tuin-category {
-        width: 95vw;
-        max-width: 95vw;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    
-        margin-top: 10vh;
-        margin-left: 5vw;
-    }
-    
-    .tuin-category:last-of-type {
-      margin-bottom: 10vh;
-    }
-
-    .icon {
-        width: 10vh;
-        height: 10vh;
-    }
-
-    .tuin-teksts {
-      flex-wrap: wrap;
-    
-        padding-top: 4vw;
-    
-        max-width: 50vw;
-    }
-    
-    .tuin-category-text {
-      font-size: 1.8em;
-      font-weight: bold;
-    
-        margin-left: 2vw;
-        width: fit-content;
-    }
-    
-    .tuin-text {
-      margin-left: 2vw;
-    }
-}
-
-.introductie {
-    padding-top: 2vh;
-    padding-left: 5vh;
+@media (max-width: 768px) {
+  .introductie {
+    /* padding-top: 2vh; */
+    /* padding-left: 5vh; */
     display: flex;
-}
+    flex-direction: column;
+    align-items: center;
+  }
 
-.introductie-foto {
+  .introductie-foto {
     width: 25vh;
     height: 25vh;
 
     border-radius: 20%;
-}
+  }
 
-.introductie-text {
+  .introductie-text {
     font-size: 1.8em;
-    /* font-size: 28px; */
     font-weight: 600;
 
     color: black;
 
-    align-self: flex-end;
-}
+    text-align: center;
+  }
 
-.tuin-category {
+  .tuin-category {
     width: 95vw;
     max-width: 95vw;
     height: fit-content;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 
     margin-top: 10vh;
     margin-left: 5vw;
+  }
+
+  .tuin-category:last-of-type {
+    margin-bottom: 10vh;
+  }
+
+  .icon {
+    width: 10vh;
+    height: 10vh;
+  }
+
+  .tuin-teksts {
+    flex-wrap: wrap;
+
+    padding-top: 4vw;
+
+    max-width: 50vw;
+  }
+
+  .tuin-category-text {
+    font-size: 1.8em;
+    font-weight: bold;
+
+    margin-left: 2vw;
+    width: fit-content;
+  }
+
+  .tuin-text {
+    margin-left: 2vw;
+  }
+}
+
+.introductie {
+  padding-top: 2vh;
+  padding-left: 5vh;
+  display: flex;
+}
+
+.introductie-foto {
+  width: 25vh;
+  height: 25vh;
+
+  border-radius: 20%;
+}
+
+.introductie-text {
+  font-size: 1.8em;
+  /* font-size: 28px; */
+  font-weight: 600;
+
+  color: black;
+
+  align-self: flex-end;
+}
+
+.tuin-category {
+  width: 95vw;
+  max-width: 95vw;
+  height: fit-content;
+  display: flex;
+
+  margin-top: 10vh;
+  margin-left: 5vw;
 }
 
 .tuin-category:last-of-type {
@@ -263,17 +263,17 @@
 .tuin-teksts {
   flex-wrap: wrap;
 
-    padding-top: 4vw;
+  padding-top: 4vw;
 
-    max-width: 50vw;
+  max-width: 50vw;
 }
 
 .tuin-category-text {
   font-size: x-large;
   font-weight: bold;
 
-    margin-left: 2vw;
-    width: fit-content;
+  margin-left: 2vw;
+  width: fit-content;
 }
 
 .tuin-text {
@@ -281,10 +281,10 @@
 }
 
 .icon {
-    width: 10vw;
-    height: 10vw;
+  width: 10vw;
+  height: 10vw;
 
-    /* margin-left: 10vw; */
+  /* margin-left: 10vw; */
 }
 
 /* MARK: FOOTER 
@@ -340,6 +340,26 @@
 }
 
 .bg-6F8587 {
-    background-color: #6F8587;
+  background-color: #6f8587;
 }
 
+/* styles.css */
+.reviews {
+  position: relative;
+  width: 40vw;
+  height: 20vh;
+}
+
+.review {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.review.active {
+  opacity: 1;
+}
