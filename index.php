@@ -22,6 +22,15 @@ include ('assets/core/header.php');
             <div class="review-text">Very nice.</div>
         </div>
     </div>
+
+
+
+
+
+--
+<div>
+    
+</div>
 </main>
 <script src="<?= BASEURL; ?>assets/js/slideshow.js"></script>
 
