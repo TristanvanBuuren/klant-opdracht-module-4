@@ -80,7 +80,8 @@
 
   @media (max-width: 768px) {
     .slide-text {
-      font-size: 24px; /* Kleinere tekstgrootte voor mobiele apparaten */
+        top: 15vh;
+        font-size: 24px; /* Kleinere tekstgrootte voor mobiele apparaten */
     }
   }
 

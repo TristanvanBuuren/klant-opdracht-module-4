@@ -8,10 +8,11 @@ include ('assets/core/header.php');
             $randomImage = 'tuin' . $i . '.png';
             ?>
             <div class="slide">
-                <img src="assets/img/<?php echo $randomImage; ?>" alt="Random Image" <?php if ($i == 1) echo 'class="active"'; ?>>
-                <?php  ?>
-                    <div class="slide-text">Welkom op de website van Hendrik Hogendijk</div>
-                <?php  ?>
+                <img src="assets/img/<?php echo $randomImage; ?>" alt="Random Image" <?php if ($i == 1)
+                       echo 'class="active"'; ?>>
+                <?php ?>
+                <div class="slide-text">Welkom op de website van Hendrik Hogendijk</div>
+                <?php ?>
             </div>
         <?php } ?>
     </div>
@@ -22,6 +23,7 @@ include ('assets/core/header.php');
         </div>
     </div>
 </main>
+<script src="<?= BASEURL; ?>assets/js/slideshow.js"></script>
 
 
 <?php
