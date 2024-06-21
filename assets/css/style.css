@@ -121,6 +121,24 @@
     height: 16vh;
   }
 
+  .hoofd-foto {
+    width: 50vw;
+    height: 50vw;
+
+    margin-left: 5vw;
+
+    border-radius: 200px;
+  }
+
+  .hoofd-text {
+    font-size: 1.8em;
+    font-weight: 600;
+
+    color: black;
+
+    /* text-align: center; */
+  }
+
 /* MARK: Contact pagina 
 */
 
