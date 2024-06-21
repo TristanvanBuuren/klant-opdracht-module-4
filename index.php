@@ -27,11 +27,7 @@ include ('assets/core/header.php');
 
 
 
-<!-- -- -->
-<div class="introductie">
-        <img class="hoofd-foto" src="assets/img/henrik.png">
-        <div class="hoofd-text">Hallo, ik ben Henrik Hogendijk en dit is wat ik doe en kan:<br><br>Ik doe tuinen maken en zin vol met passie blah blah</div>
-    </div>
+--
 </main>
 <script src="<?= BASEURL; ?>assets/js/slideshow.js"></script>
 
