@@ -83,14 +83,20 @@
     top: 15vh;
     font-size: 24px; /* Kleinere tekstgrootte voor mobiele apparaten */
   }
+  .slideshow {
+    position: relative;
+    width: 100vw;
+    height: 25vh; /* Adjust height as needed */
+
+    overflow: hidden;
+  }
 }
 
 .reviews {
-  width: 100vw;
+  position: relative;
+  width: 40vw;
   height: 20vh;
-
-  /* display: flex; */
-  margin-bottom: 4vh;
+  margin-bottom: 5vh;
 }
 
 .review {
@@ -100,10 +106,11 @@
 
   width: 40vw;
   height: 20vh;
-
+  opacity: 0;
   background-color: white;
   border: black solid 1px;
   border-radius: 10px;
+  transition: opacity 2s ease;
 }
 
 .review-name {
@@ -119,6 +126,26 @@
   padding-top: 1vh;
   padding-left: 1vh;
   height: 16vh;
+}
+
+.review.active {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .reviews {
+    width: 80vw;
+    height: 20vh;
+    margin-bottom: 5vh;
+  }
+
+  .review {
+    margin-inline: 10vw; /* Verander naar 10vw voor betere centrering op mobiel */
+    margin-top: 4vh;
+    padding-left: 1vw;
+    min-height: fit-content;
+    width: 80vw; /* Verander naar 80vw voor betere responsiviteit */
+    height: 20vh;
+  }
 }
 
 /* MARK: Contact pagina 
@@ -341,25 +368,4 @@
 
 .bg-6F8587 {
   background-color: #6f8587;
-}
-
-/* styles.css */
-.reviews {
-  position: relative;
-  width: 40vw;
-  height: 20vh;
-}
-
-.review {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 2s ease;
-}
-
-.review.active {
-  opacity: 1;
 }
