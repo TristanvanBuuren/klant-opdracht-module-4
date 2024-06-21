@@ -24,6 +24,7 @@ include ('assets/core/header.php');
     </div>
 </main>
 <script src="<?= BASEURL; ?>assets/js/slideshow.js"></script>
+<script src="<?= BASEURL; ?>assets/js/slideshow2.js"></script>
 
 
 <?php
