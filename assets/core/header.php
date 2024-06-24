@@ -13,19 +13,27 @@ include ('db_connect.php');
     <link rel="stylesheet" href="<?= BASEURL; ?>assets/css/style.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-   
+
     <title>Tuinman</title>
 </head>
 
 <body class="bg-6F8587">
     <div class="header">
         <div class="e">
-            <img src="assets\img\hark-removebg-preview.png" alt="PLACEHOLDER" class="logo-website header-logo">
+            <img src="assets\img\hark-removebg-preview.png" alt="logo" class="logo-website header-logo">
             <div class="header-name">Henrik De Hovenier's Website</div>
         </div>
         <div class="f">
-            <button class="btn-left nav-buttons"><a href="<?= BASEURL ?>index.php" class="button-deco">Home</a></button>
-            <button class="btn-middle nav-buttons"><a href="<?= BASEURL ?>diensten.php" class="button-deco">Diensten</a></button>
-            <button class="btn-right nav-buttons"><a href="<?= BASEURL ?>contact.php" class="button-deco">Contact</a></button>
+            <a href="<?= BASEURL ?>index.php" class="btn-left nav-buttons button-deco">Home</a>
+            <a href="<?= BASEURL ?>diensten.php" class="btn-middle nav-buttons button-deco">Diensten</a>
+            <a href="<?= BASEURL ?>contact.php" class="btn-right nav-buttons button-deco">Contact</a>
+        </div>
+        <div class="dropdown">
+            <img class="dropdown-img" src="assets/img/menu.png" alt="menu">
+            <div class="dropdown-buttons">
+                <a href="<?= BASEURL ?>index.php" class="btn-left nav-buttons-dropdown button-deco">Home</a>
+                <a href="<?= BASEURL ?>diensten.php" class="btn-middle nav-buttons-dropdown button-deco">Diensten</a>
+                <a href="<?= BASEURL ?>contact.php" class="btn-right nav-buttons-dropdown button-deco">Contact</a>
+            </div>
         </div>
     </div>
