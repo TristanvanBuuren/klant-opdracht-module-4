@@ -21,7 +21,10 @@ include ('db_connect.php');
     <div class="header">
         <div class="e">
             <img src="assets\img\hark-removebg-preview.png" alt="logo" class="logo-website header-logo">
-            <div class="header-name">Henrik De Hovenier's Website</div>
+            <div>
+                <div class="header-text">Hendrik Hogendijk Project</div>
+                <p class="header-subtext">Uw Vertrouwde Partner voor Excellentie</p>
+            </div>
         </div>
         <div class="f">
             <a href="<?= BASEURL ?>index.php" class="btn-left nav-buttons button-deco">Home</a>

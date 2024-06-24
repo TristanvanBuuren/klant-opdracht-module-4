@@ -21,6 +21,16 @@
     width: 25vw;
 }
 
+.header-text {
+    font-weight: bold;
+    font-size: x-large;
+    text-wrap: nowrap;
+}
+
+.header-subtext {
+    font-size: smaller;
+}
+
 .f {
     display: flex;
     justify-content: space-around;
