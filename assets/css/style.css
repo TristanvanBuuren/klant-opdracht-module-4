@@ -32,21 +32,21 @@
 }
 
 .nav-buttons {
-    background-color: rgb(24, 18, 63);
-    border: none;
+  background-color: rgb(24, 18, 63);
+  border: none;
 }
 
 .nav-buttons:hover {
-    cursor: pointer;
-    background-color: rgb(17, 13, 46);
-    /* background: linear-gradient(to right, rgba(0, 0, 255, 1), rgba(255, 0, 0, 0.5)); */
-    box-shadow: 0px 0px 20px 10px rgb(17, 13, 46);
-    font-weight: 700;
+  cursor: pointer;
+  background-color: rgb(17, 13, 46);
+  /* background: linear-gradient(to right, rgba(0, 0, 255, 1), rgba(255, 0, 0, 0.5)); */
+  box-shadow: 0px 0px 20px 10px rgb(17, 13, 46);
+  font-weight: 700;
 }
 
 .btn-middle {
-    border-left: gray 1px solid;
-    border-right: gray 1px solid;
+  border-left: gray 1px solid;
+  border-right: gray 1px solid;
 }
 
 .g {
@@ -109,11 +109,9 @@
     overflow: hidden;
   }
 }
-
 .reviews {
   position: relative;
   width: 40vw;
-  min-height: 20vh;
   height: fit-content;
   margin-bottom: 5vh;
 }
@@ -121,51 +119,45 @@
 .review {
   margin-inline: 30vw;
   margin-top: 4vh;
-  padding-left: 1vw;
-
+  padding: 1vw;
   width: 40vw;
-  height: fit-content;
-  min-height: 20vh;
-  opacity: 0;
   background-color: white;
   border: black solid 1px;
   border-radius: 10px;
   transition: opacity 2s ease;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .review-name {
-  height: 4vh;
-
   font-size: 20px;
   font-weight: 600;
-
-  /* background-color: blue; */
+  padding-bottom: 0.5vh;
 }
 
 .review-text {
   padding-top: 1vh;
   padding-left: 1vh;
-  min-height: 16vh;
   height: fit-content;
 }
 
 .review.active {
   opacity: 1;
 }
+
 @media (max-width: 768px) {
   .reviews {
     width: 80vw;
-    height: 20vh;
     margin-bottom: 5vh;
   }
 
   .review {
-    margin-inline: 10vw; /* Verander naar 10vw voor betere centrering op mobiel */
+    margin-inline: 10vw;
     margin-top: 4vh;
-    padding-left: 1vw;
-    min-height: fit-content;
-    width: 80vw; /* Verander naar 80vw voor betere responsiviteit */
-    height: 20vh;
+    padding: 1vw;
+    width: 80vw;
+    height: fit-content;
   }
 }
 
@@ -410,7 +402,7 @@ header {
 }
 .header-content {
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 .header-content h1 {
   margin: 0;
@@ -419,15 +411,15 @@ header {
 .header-content p {
   margin: 0;
   font-size: 0.8em;
-  color: #555; 
+  color: #555;
 }
 .logo {
-  margin-right: 1em; 
+  margin-right: 1em;
 }
 .logo img {
-  width: 40px; 
+  width: 40px;
   height: auto;
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 .container {
   display: flex;
@@ -436,8 +428,8 @@ header {
   padding: 1em;
 }
 form {
-  flex: 1 1 45%; 
-  max-width: 45%; 
+  flex: 1 1 45%;
+  max-width: 45%;
   padding: 1em;
   background-color: #fff;
   border-radius: 8px;
@@ -450,19 +442,19 @@ form button {
   width: 100%;
 }
 .contact-info {
-  flex: 1 1 45%; 
-  max-width: 45%; 
+  flex: 1 1 45%;
+  max-width: 45%;
   padding: 1em;
   background-color: #fff;
   border-radius: 8px;
   margin-bottom: 1em;
-  position: relative;  
+  position: relative;
 }
 .contact-info p {
   margin-bottom: 0.5em;
 }
 .contact-info a {
-  color: #6F8587;
+  color: #6f8587;
   text-decoration: none;
 }
 .contact-info a:hover {
@@ -471,10 +463,10 @@ form button {
 .contact-info img {
   width: 100%;
   height: auto;
-  max-width: 100px; 
-  position: absolute; 
-  top: 2em; 
-  right: 1em; 
+  max-width: 100px;
+  position: absolute;
+  top: 2em;
+  right: 1em;
 }
 .social-links {
   margin-top: 1em;
@@ -493,7 +485,8 @@ form button {
   text-align: center;
   margin-top: 2em;
 }
-button[type="submit"], button.cta {
+button[type="submit"],
+button.cta {
   background-color: #fe0505;
   color: #fff;
   padding: 1em 2em;
@@ -505,18 +498,19 @@ button[type="submit"], button.cta {
 }
 @media (max-width: 768px) {
   .container {
-      flex-direction: column;
-      padding: 0.5em;
+    flex-direction: column;
+    padding: 0.5em;
   }
-  form, .contact-info {
-      width: 100%;
-      max-width: none;
-      margin: 0;
+  form,
+  .contact-info {
+    width: 100%;
+    max-width: none;
+    margin: 0;
   }
   .contact-info img {
-      max-width: 80px; 
-      top: auto;
-      right: auto; 
-      margin-top: 1em;
+    max-width: 80px;
+    top: auto;
+    right: auto;
+    margin-top: 1em;
   }
 }
