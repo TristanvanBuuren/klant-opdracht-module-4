@@ -29,6 +29,7 @@
     padding-bottom: 1.5vh;
 
     width: 30vw;
+    margin-left: 30vw;
 }
 
 .dropdown {
@@ -46,6 +47,7 @@
     background-color: rgb(24, 18, 63);
     padding-top: 2vh;
     border: none;
+    padding-inline: 2vw;
 }
 
 .nav-buttons:hover {
@@ -59,7 +61,7 @@
 .btn-middle {
     border-left: gray 1px solid;
     border-right: gray 1px solid;
-    padding-inline: 2vw;
+    /* padding-inline: 2vw; */
 }
 
 .nav-buttons {
@@ -213,7 +215,7 @@
     min-height: 20vh;
     opacity: 0;
     background-color: white;
-    border: black solid 1px;
+    /* border: black solid 1px; */
     border-radius: 10px;
     transition: opacity 2s ease;
 }
