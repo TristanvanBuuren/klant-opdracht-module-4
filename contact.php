@@ -94,9 +94,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
         <div class="contact-info">
             <h2>Neem Contact Op</h2>
-            <p><b>TEL:</b> +31 6 12 34 56 78</p>
+            <?php
+        $sql = "SELECT info_tekst FROM informatie WHERE info_type = 1";
+        $liqry = $con->prepare($sql);
+        if ($liqry === false) {
+            echo mysqli_error($con);
+        } else {
+            $liqry->bind_result($info_tekst);
+            if ($liqry->execute()) {
+                $liqry->store_result();
+                while ($liqry->fetch()) {
+                    echo $info_tekst . "<br>";
+                }
+            }
+            $liqry->close();
+        }
+        ?>
+            <!-- <p><b>TEL:</b> +31 6 12 34 56 78</p>
             <p><b>SMS:</b> 06 00 00 00 00</p>
-            <p><b>E-mail:</b> hendrikhogend@klaopdracht.nl</p>
+            <p><b>E-mail:</b> hendrikhogend@klaopdracht.nl</p> -->
             <div class="social-links">
                 <a href="#">
                     <i class="fab fa-facebook"></i>
@@ -109,10 +125,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </a>
             </div>
             <p><b>Openingstijden:</b></p>
-            <p>Maandag-Vrijdag: 7:00-17:00</p>
+            <?php
+        $sql = "SELECT info_tekst FROM informatie WHERE info_type = 2";
+        $liqry = $con->prepare($sql);
+        if ($liqry === false) {
+            echo mysqli_error($con);
+        } else {
+            $liqry->bind_result($info_tekst);
+            if ($liqry->execute()) {
+                $liqry->store_result();
+                while ($liqry->fetch()) {
+                    echo $info_tekst . "<br>";
+                }
+            }
+            $liqry->close();
+        }
+        ?>
+            <!-- <p>Maandag-Vrijdag: 7:00-17:00</p>
             <p>Zaterdag: Op afspraak</p>
-            <p>Zondag: Gesloten</p>
-            <img src="assets/img/klant.png" alt="Hendrik Hogendijk" width="150" height="100">
+            <p>Zondag: Gesloten</p> -->
+            <img src="assets/img/henrik.png" alt="Hendrik Hogendijk" width="150" height="100">
         </div>
     </div>
 </body>
