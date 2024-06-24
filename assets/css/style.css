@@ -31,6 +31,24 @@
   width: 30vw;
 }
 
+.nav-buttons {
+    background-color: rgb(24, 18, 63);
+    border: none;
+}
+
+.nav-buttons:hover {
+    cursor: pointer;
+    background-color: rgb(17, 13, 46);
+    /* background: linear-gradient(to right, rgba(0, 0, 255, 1), rgba(255, 0, 0, 0.5)); */
+    box-shadow: 0px 0px 20px 10px rgb(17, 13, 46);
+    font-weight: 700;
+}
+
+.btn-middle {
+    border-left: gray 1px solid;
+    border-right: gray 1px solid;
+}
+
 .g {
   display: flex;
   justify-content: start;
@@ -45,40 +63,111 @@
 /* MARK: Index Pagina
  */
 
- .slideshow {
+.slideshow {
+  position: relative;
+  width: 100vw;
+  height: 60vh; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100vw;
+  height: 50vw;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 0.7;
+}
+
+.slide-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px; /* Pas de tekstgrootte aan naar wens */
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 80%;
+  opacity: 1;
+  z-index: 1; /* Zorg ervoor dat de tekst boven de afbeelding wordt weergegeven */
+}
+
+@media (max-width: 768px) {
+  .slide-text {
+    top: 15vh;
+    font-size: 24px; /* Kleinere tekstgrootte voor mobiele apparaten */
+  }
+  .slideshow {
     position: relative;
     width: 100vw;
-    height: 60vh; /* Adjust height as needed */
+    height: 25vh; /* Adjust height as needed */
+
     overflow: hidden;
   }
-  .slideshow img {
-    position: absolute;
-    width: 100vw;
-    height: 50vw;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+}
+
+.reviews {
+  position: relative;
+  width: 40vw;
+  min-height: 20vh;
+  height: fit-content;
+  margin-bottom: 5vh;
+}
+
+.review {
+  margin-inline: 30vw;
+  margin-top: 4vh;
+  padding-left: 1vw;
+
+  width: 40vw;
+  height: fit-content;
+  min-height: 20vh;
+  opacity: 0;
+  background-color: white;
+  border: black solid 1px;
+  border-radius: 10px;
+  transition: opacity 2s ease;
+}
+
+.review-name {
+  height: 4vh;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  /* background-color: blue; */
+}
+
+.review-text {
+  padding-top: 1vh;
+  padding-left: 1vh;
+  min-height: 16vh;
+  height: fit-content;
+}
+
+.review.active {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .reviews {
+    width: 80vw;
+    height: 20vh;
+    margin-bottom: 5vh;
   }
-  .slideshow img.active {
-    opacity: 0.7;
+
+  .review {
+    margin-inline: 10vw; /* Verander naar 10vw voor betere centrering op mobiel */
+    margin-top: 4vh;
+    padding-left: 1vw;
+    min-height: fit-content;
+    width: 80vw; /* Verander naar 80vw voor betere responsiviteit */
+    height: 20vh;
   }
-  .slide-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 36px; /* Pas de tekstgrootte aan naar wens */
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    width: 80%;
-    opacity: 1;
-    z-index: 1; /* Zorg ervoor dat de tekst boven de afbeelding wordt weergegeven */
-  }
-  @media (max-width: 768px) {
-    .slide-text {
-      font-size: 24px; /* Kleinere tekstgrootte voor mobiele apparaten */
-    }
-  }
+}
 
 /* MARK: Contact pagina 
 */
@@ -112,17 +201,107 @@
   justify-content: center;
 }
 
-/* MARK: Design pagina 
+/* MARK: Diesten pagina 
 */
 
-.tuin-category {
+@media (max-width: 768px) {
+  .introductie {
+    /* padding-top: 2vh; */
+    /* padding-left: 5vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .introductie-foto {
+    width: 25vh;
+    height: 25vh;
+
+    border-radius: 20%;
+  }
+
+  .introductie-text {
+    font-size: 1.8em;
+    font-weight: 600;
+
+    color: black;
+
+    text-align: center;
+  }
+
+  .tuin-category {
     width: 95vw;
     max-width: 95vw;
     height: fit-content;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 
     margin-top: 10vh;
     margin-left: 5vw;
+  }
+
+  .tuin-category:last-of-type {
+    margin-bottom: 10vh;
+  }
+
+  .icon {
+    width: 10vh;
+    height: 10vh;
+  }
+
+  .tuin-teksts {
+    flex-wrap: wrap;
+
+    padding-top: 4vw;
+
+    max-width: 50vw;
+  }
+
+  .tuin-category-text {
+    font-size: 1.8em;
+    font-weight: bold;
+
+    margin-left: 2vw;
+    width: fit-content;
+  }
+
+  .tuin-text {
+    margin-left: 2vw;
+  }
+}
+
+.introductie {
+  padding-top: 2vh;
+  padding-left: 5vh;
+  display: flex;
+}
+
+.introductie-foto {
+  width: 25vh;
+  height: 25vh;
+
+  border-radius: 20%;
+}
+
+.introductie-text {
+  font-size: 1.8em;
+  /* font-size: 28px; */
+  font-weight: 600;
+
+  color: black;
+
+  align-self: flex-end;
+}
+
+.tuin-category {
+  width: 95vw;
+  max-width: 95vw;
+  height: fit-content;
+  display: flex;
+
+  margin-top: 10vh;
+  margin-left: 5vw;
 }
 
 .tuin-category:last-of-type {
@@ -132,17 +311,17 @@
 .tuin-teksts {
   flex-wrap: wrap;
 
-    padding-top: 4vw;
+  padding-top: 4vw;
 
-    max-width: 50vw;
+  max-width: 50vw;
 }
 
 .tuin-category-text {
   font-size: x-large;
   font-weight: bold;
 
-    margin-left: 2vw;
-    width: fit-content;
+  margin-left: 2vw;
+  width: fit-content;
 }
 
 .tuin-text {
@@ -150,10 +329,10 @@
 }
 
 .icon {
-    width: 10vw;
-    height: 10vw;
+  width: 10vw;
+  height: 10vw;
 
-    /* margin-left: 10vw; */
+  /* margin-left: 10vw; */
 }
 
 /* MARK: FOOTER 
@@ -209,7 +388,7 @@
 }
 
 .bg-6F8587 {
-    background-color: #6F8587;
+  background-color: #6f8587;
 }
 
 /* MARK: contact pagina css
