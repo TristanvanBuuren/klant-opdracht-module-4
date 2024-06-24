@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
 <main>
     <div class="slideshow">
         <?php
-        for ($i = 1; $i <= 3; $i++) {
+        for ($i = 1; $i <= 6; $i++) {
             $randomImage = 'tuin' . $i . '.png';
             ?>
             <div class="slide">
