@@ -29,7 +29,7 @@ include ('db_connect.php');
             <a href="<?= BASEURL ?>contact.php" class="btn-right nav-buttons button-deco">Contact</a>
         </div>
         <div class="dropdown">
-            <img src="assets/img/menu.png" alt="menu">
+            <img class="dropdown-img" src="assets/img/menu.png" alt="menu">
             <div class="dropdown-buttons">
                 <a href="<?= BASEURL ?>index.php" class="btn-left nav-buttons-dropdown button-deco">Home</a>
                 <a href="<?= BASEURL ?>diensten.php" class="btn-middle nav-buttons-dropdown button-deco">Diensten</a>
