@@ -497,6 +497,11 @@
   background-color: #6f8587;
 }
 
+.text-wrap {
+    text-wrap: wrap;
+    overflow-wrap: break-word;
+}
+
 /* MARK: contact pagina css
 */
 

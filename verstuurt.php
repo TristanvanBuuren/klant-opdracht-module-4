@@ -39,7 +39,7 @@ unset($_SESSION['bericht']);
         <p>Hier zijn de gegevens die u heeft ingevuld:</p>
         <p><strong>Naam:</strong> <?php echo $naam; ?></p>
         <p><strong>E-mailadres:</strong> <?php echo $email; ?></p>
-        <p><strong>Bericht:</strong> <?php echo $bericht; ?></p>
+        <p><strong>Bericht:</strong><div class="text-wrap"><?php echo $bericht; ?></div> </p>
          
            
         </form>
