@@ -1,7 +1,6 @@
 <?php
 include('assets/core/header.php');
 
-
 $naam = isset($_POST['naam']) ? $_POST['naam'] : '';
 $email = isset($_POST['email']) ? $_POST['email'] : '';
 $bericht = isset($_POST['bericht']) ? $_POST['bericht'] : '';
@@ -46,14 +45,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO contact (naam, email, bericht) VALUES ('$naam', '$email', '$bericht')";
 
         if ($con->query($sql) === TRUE) {
-            echo "Gegevens zijn succesvol verzonden!";
+            // Redirect naar de nieuwe pagina met de ingevulde gegevens
+            $_SESSION['naam'] = $naam;
+            $_SESSION['email'] = $email;
+            $_SESSION['bericht'] = $bericht;
+            header("Location: verstuurt.php");
+            exit();
         } else {
             echo "Fout bij het opslaan van de gegevens: " . $con->error;
-        }
-    } else {
-        // Echo de validatiefouten
-        foreach ($errors as $error) {
-            echo $error . "<br>";
         }
     }
 }
@@ -80,6 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </header>
     <div class="container">
+        
     <form action="" method="post">
             <label for="name">Naam:</label>
             <input type="text" id="name" name="naam" placeholder="Uw Naam" value="<?php echo $naam; ?>" required>
@@ -90,6 +90,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="message">Uw Bericht:</label>
             <textarea id="message" name="bericht" placeholder="Voer uw vraag of bericht in" required><?php echo $bericht; ?></textarea>
 
+            <?php if (!empty($errors)) { ?>
+            <div class="error-messages">
+                <?php foreach ($errors as $error) { ?>
+                    <p><?php echo $error; ?></p>
+                <?php } ?>
+            </div>
+        <?php } ?>
             <button type="submit">Verstuur</button>
         </form>
         <div class="contact-info">
@@ -110,9 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $liqry->close();
         }
         ?>
-            <!-- <p><b>TEL:</b> +31 6 12 34 56 78</p>
-            <p><b>SMS:</b> 06 00 00 00 00</p>
-            <p><b>E-mail:</b> hendrikhogend@klaopdracht.nl</p> -->
+            
             <div class="social-links">
                 <a href="#">
                     <i class="fab fa-facebook"></i>
@@ -141,9 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $liqry->close();
         }
         ?>
-            <!-- <p>Maandag-Vrijdag: 7:00-17:00</p>
-            <p>Zaterdag: Op afspraak</p>
-            <p>Zondag: Gesloten</p> -->
+   
             <img src="assets/img/henrik.png" alt="Hendrik Hogendijk" width="150" height="100">
         </div>
     </div>
@@ -151,45 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </html>
 <?php
 
-// // Get the form fields and remove whitespace
-// $name = strip_tags(trim($_POST["name"]));
-// $name = str_replace(array("\r","\n"),array(" "," "),$name);
-// $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-// $message = trim($_POST["message"]);
-
-// // Check that data was submitted to the mailer
-// if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-//     // Set a 400 (bad request) response code and exit
-//     http_response_code(400);
-//     echo "Er is iets fout gegaan. Controleer uw invulvelden en probeer het opnieuw.";
-//     exit;
-// }
-
-// // Set the recipient email address
-// $recipient = "hendrikhogend@klaopdracht.nl";
-
-// // Set the email subject
-// $subject = "Contactformulier van $name";
-
-// // Build the email message
-// $message = "Naam: $name\n";
-// $message .= "E-mailadres: $email\n";
-// $message .= "Bericht: $message";
-
-// // Send the email
-// if (mail($recipient, $subject, $message)) {
-//     // Set a 200 (ok) response code and exit
-//     http_response_code(200);
-//     echo "Bedankt voor uw bericht! Wij zullen zo snel mogelijk reageren.";
-//     exit;
-// } else {
-//     // Set a 500 (internal server error) response code and exit
-//     http_response_code(500);
-//     echo "Er is iets fout gegaan. Onze excuses voor het ongemak.";
-//     exit;
-// }
-
-// ?>
+?>
 <?php
 include('assets/core/footer.php');
 ?>
