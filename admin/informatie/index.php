@@ -21,15 +21,16 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
             <th></th>
             <th>info_id</th>
             <th>info_type</th>
+            <th>info_prefix</th>
             <th>info_tekst</th>
         </tr>
         <?php
-        $sql = "SELECT info_id, info_type, info_tekst FROM informatie";
+        $sql = "SELECT info_id, info_type, info_prefix, info_tekst FROM informatie";
         $liqry = $con->prepare($sql);
         if ($liqry === false) {
             echo mysqli_error($con);
         } else {
-            $liqry->bind_result($info_id, $info_type, $info_tekst);
+            $liqry->bind_result($info_id, $info_type, $info_prefix, $info_tekst);
             if ($liqry->execute()) {
                 $liqry->store_result();
                 while ($liqry->fetch()) {
@@ -46,6 +47,7 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
                         <td>
                             <?php echo $info_type; ?>
                         </td>
+                        <td><?php echo $info_prefix; ?></td>
                         <td><?php echo $info_tekst; ?></td>
                     </tr>
                     <?php
