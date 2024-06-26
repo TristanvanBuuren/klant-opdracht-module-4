@@ -2,16 +2,16 @@
     <div class="footer-contact">
         Neem contact met ons op: <br><br>
         <?php
-        $sql = "SELECT info_tekst FROM informatie WHERE info_type = 1";
+        $sql = "SELECT info_prefix, info_tekst FROM informatie WHERE info_type = 1";
         $liqry = $con->prepare($sql);
         if ($liqry === false) {
             echo mysqli_error($con);
         } else {
-            $liqry->bind_result($info_tekst);
+            $liqry->bind_result($info_prefix, $info_tekst);
             if ($liqry->execute()) {
                 $liqry->store_result();
                 while ($liqry->fetch()) {
-                    echo $info_tekst . "<br>";
+                    echo $info_prefix . ": " . "<a href='" . $info_prefix . ":" . $info_tekst ."'>" . $info_tekst . "</a>" ."<br>";
                 }
             }
             $liqry->close();
@@ -21,16 +21,16 @@
     <div class="footer-dagen">
     Onze Openings tijden: <br><br>
         <?php
-        $sql = "SELECT info_tekst FROM informatie WHERE info_type = 2";
+        $sql = "SELECT info_prefix, info_tekst FROM informatie WHERE info_type = 2";
         $liqry = $con->prepare($sql);
         if ($liqry === false) {
             echo mysqli_error($con);
         } else {
-            $liqry->bind_result($info_tekst);
+            $liqry->bind_result($info_prefix, $info_tekst);
             if ($liqry->execute()) {
                 $liqry->store_result();
                 while ($liqry->fetch()) {
-                    echo $info_tekst . "<br>";
+                    echo $info_prefix . " " . $info_tekst . "<br>";
                 }
             }
             $liqry->close();

@@ -46,16 +46,16 @@ unset($_SESSION['bericht']);
         <div class="contact-info">
             <h2>Neem Contact Op</h2>
             <?php
-        $sql = "SELECT info_tekst FROM informatie WHERE info_type = 1";
+        $sql = "SELECT info_prefix, info_tekst FROM informatie WHERE info_type = 1";
         $liqry = $con->prepare($sql);
         if ($liqry === false) {
             echo mysqli_error($con);
         } else {
-            $liqry->bind_result($info_tekst);
+            $liqry->bind_result($info_prefix, $info_tekst);
             if ($liqry->execute()) {
                 $liqry->store_result();
                 while ($liqry->fetch()) {
-                    echo $info_tekst . "<br>";
+                    echo $info_prefix . ": " . "<a href='" . $info_prefix . ":" . $info_tekst ."'>" . $info_tekst . "</a>" ."<br>";
                 }
             }
             $liqry->close();
@@ -75,16 +75,16 @@ unset($_SESSION['bericht']);
             </div>
             <p><b>Openingstijden:</b></p>
             <?php
-        $sql = "SELECT info_tekst FROM informatie WHERE info_type = 2";
+        $sql = "SELECT info_prefix, info_tekst FROM informatie WHERE info_type = 2";
         $liqry = $con->prepare($sql);
         if ($liqry === false) {
             echo mysqli_error($con);
         } else {
-            $liqry->bind_result($info_tekst);
+            $liqry->bind_result($info_prefix, $info_tekst);
             if ($liqry->execute()) {
                 $liqry->store_result();
                 while ($liqry->fetch()) {
-                    echo $info_tekst . "<br>";
+                    echo $info_prefix . " " . $info_tekst . "<br>";
                 }
             }
             $liqry->close();
