@@ -14,7 +14,7 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
     exit();
 }
 ?>
-<div class="row">
+<div class="row pd-l-1vw">
     <table class="table">
         <tr>
             <th></th>
@@ -57,7 +57,7 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
         }
         ?>
     </table>
-    <a class="button-deco btn btn-success" href="./add_info.php">ADD</a>
+    <a class="button-deco btn btn-success mw-100p" href="./add_info.php">ADD</a>
 </div>
 <?php
 include('../core/footeradmin.php');

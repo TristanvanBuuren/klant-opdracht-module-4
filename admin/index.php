@@ -3,7 +3,7 @@ include('core/headeradmin.php');
 // echo BASEURL_CMS
 ?>
 
-<div class="row">
+<div class="row pd-l-1vw">
         <table class="table">
             <tr>
                 <th>EDIT</th>
