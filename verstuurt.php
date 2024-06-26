@@ -21,17 +21,7 @@ unset($_SESSION['bericht']);
     <title>Neem Contact Op</title>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <img src="assets/img/hark-removebg-preview.png" alt="Hendrik Hogendijk Logo" width="40" height="40">
-            </div>
-            <div>
-                <h1>Hendrik Hogendijk Project</h1>
-                <p>Uw Vertrouwde Partner voor Excellentie</p>
-            </div>
-        </div>
-    </header>
+   
     <div class="container">
         
     <form action="" method="post">

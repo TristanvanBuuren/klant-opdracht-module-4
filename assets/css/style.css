@@ -110,14 +110,14 @@
 }
 
 @media (max-width: 768px) {
-    .e {
-        display: flex;
-        width: 60vw;
-    }
+  .e {
+    display: flex;
+    width: 60vw;
+  }
 
-    .f {
-        display: none;
-    }
+  .f {
+    display: none;
+  }
 
   .dropdown {
     margin-left: 20vw;
