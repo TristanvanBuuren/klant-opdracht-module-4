@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2024 at 03:08 PM
+-- Generation Time: Jun 26, 2024 at 01:47 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -53,56 +53,18 @@ CREATE TABLE `contact` (
   `id` int(11) NOT NULL,
   `naam` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `bericht` text NOT NULL
+  `bericht` text NOT NULL,
+  `tijd_gemaakt` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `contact`
 --
 
-INSERT INTO `contact` (`id`, `naam`, `email`, `bericht`) VALUES
-(1, 'Joe biden', 'joebiden@gmail.com', 'esfsefes'),
-(2, 'Joe biden', 'joebiden@gmail.com', 'esfsefes'),
-(3, 'Joe biden', 'joebiden@gmail.com', 'cddddddddddddddddddddd'),
-(4, 'Joe biden', 'joebiden@gmail.com', 'cddddddddddddddddddddd'),
-(5, 'awddaw', 'joebiden@gmail.com', 'cddddddddddddddddddddd'),
-(6, 'AWawddaw', 'joebiden@gmail.com', 'cddddddddddddddddddddd'),
-(7, 'AWawddaw', 'joebiden@gmail.com', 'cddddddddddddddddddddd'),
-(8, 'AWawddaw', 'joebiden@gmail.com', 'cddddddddddddddddddddd'),
-(9, 'Joe biden', 'joebiden@gmail.com', 'kugtliytlky'),
-(10, 'Joe biden', 'joebiden@gmail.com', 'kugtliytlky'),
-(11, 'Joe biden', 'joebiden@gmail.com', 'kugtliytlky'),
-(12, 'Joe biden', 'joebiden@gmail.com', 'kugtliytlky'),
-(13, 'Joe biden', 'joebiden@gmail.com', 'kugtliytlky'),
-(14, 'Joe biden', 'joebiden@gmail.com', 'kugtliytlky'),
-(15, 'Joe biden', 'joebiden@gmail.com', 'kugtliytlky'),
-(16, 'Joe biden', 'joebiden@gmail.com', 'kugtliytlky'),
-(17, 'Joe biden', 'joebiden@gmail.com', 'kugtliytlky'),
-(18, 'Joe biden', 'joebiden@gmail.com', 'kugtliytlky'),
-(19, 'Joe bide', 'joebiden@gmail.com', 'kugtliytlky'),
-(20, 'Joe bide', 'joebiden@gmail.com', 'kugtliytlky'),
-(21, 'Joe bide', 'joebiden@gmail.com', 'kugtliytlky'),
-(22, 'Joe bide', 'joebiden@gmail.com', 'kugtliytlky&gt;'),
-(23, 'Joe bide', 'joebiden@gmail.com', 'kugtliytlky&gt;'),
-(24, 'Joe bide', 'joebiden@gmail.com', 'kugtliytlky&gt;./1'),
-(25, 'Joe bide', 'joebiden@gmail.com', 'kugtliytlky&gt;./1$'),
-(26, 'Joe bide', 'joebiden@gmail.com', 'kugtliytlky&gt;./1$&lt;script&gt;&quot;'),
-(27, 'Joe bide', 'joebiden@gmail.com', 'kugtliytlky&gt;./1$&lt;script&gt;&quot;'),
-(28, 'Joe bide', 'joebiden@gmail.com', 'kugtliytlky&gt;./1$&lt;script&gt;&quot;'),
-(29, 'Joe bide', 'joebiden@gmail.com', 'kugtliytlky&gt;./1$&lt;script&gt;&quot;'),
-(30, 'Joe bide', 'joebiden@gmail.com', 'kugtliytlky&gt;./1$&lt;script&gt;&quot;'),
-(31, 'awdwa', 'joebiden@gmail.com', 'kugtliytlky&gt;./1$&lt;script&gt;&quot;'),
-(32, 'JJJJJJJJJJJJJJJJJ', 'joebiden@gmail.com', 'kugtliytlky&gt;./1$&lt;script&gt;&quot;'),
-(33, 'awdwa', 'joebiden@gmail.com', 'kugtliytlky&gt;./1$&lt;script&gt;&quot;'),
-(34, 'awdwa', 'joebiden@gmail.com', 'kugtliytlky&gt;./1$&lt;script&gt;&quot;'),
-(35, 'dwadwa', 'joebiden@gmail.com', 'wadadw'),
-(36, 'Jesse', 'joebiden@gmail.com', 'Dit is mijn ebricht en dat bericht van mij is een heel mooi bericht die ik aan het berichten ben'),
-(37, 'Jesse', 'joebiden@gmail.com', 'Dit is mijn ebricht en dat bericht van mij is een heel mooi bericht die ik aan het berichten ben'),
-(38, 'Joe biden', 'joebiden@gmail.com', 'hhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjdddddddddddd'),
-(39, 'Joe biden', 'joebiden@gmail.com', 'hhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjdddddddddddd'),
-(40, 'Joe biden', 'joebiden@gmail.com', 'hhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjddddddddddddhhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjddddddddddddhhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjddddddddddddhhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjddddddddddddhhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjdddddddddddd'),
-(41, 'Joe biden', 'joebiden@gmail.com', 'hhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjddddddddddddhhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjddddddddddddhhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjddddddddddddhhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjddddddddddddhhhhhhhhhhhhhhhhjjjjjjjjjjjjjjjjdddddddddddd'),
-(42, 'Joe bidenddd', 'joebawdawdawiden@gmail.com', 'awdwawadwaawd');
+INSERT INTO `contact` (`id`, `naam`, `email`, `bericht`, `tijd_gemaakt`) VALUES
+(45, 'wadaw', 'HendrikHogendijk@klantopdracht.glu.nlawd', 'adwawd', '2024-06-26 13:35:14'),
+(46, 'Hendrik Hogendijkdddddddddd', 'HendrikHogendijk@klantopdracht.glu.nlddddddddddd', 'ddddddddddd', '2024-06-26 13:38:53'),
+(47, 'Hendrik Hogendijkdddddddddddddddddddddddd', 'HendrikHogendijk@klantopdracht.glu.nlddddddddddd', 'ddddddddddd', '2024-06-26 13:41:49');
 
 -- --------------------------------------------------------
 
@@ -228,7 +190,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `hoofdpagina`

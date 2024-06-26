@@ -16,6 +16,7 @@ function test_input($data) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize inputs
+    $tijd_gemaakt = date('Y-m-d H:i:s');
     $naam = test_input($_POST['naam']);
     $email = test_input($_POST['email']);
     $bericht = test_input($_POST['bericht']);
@@ -42,13 +43,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = mysqli_real_escape_string($con, $email);
         $bericht = mysqli_real_escape_string($con, $bericht);
 
-        $sql = "INSERT INTO contact (naam, email, bericht) VALUES ('$naam', '$email', '$bericht')";
+        $sql = "INSERT INTO contact (naam, email, bericht, tijd_gemaakt) VALUES ('$naam', '$email', '$bericht', '$tijd_gemaakt')";
 
         if ($con->query($sql) === TRUE) {
             // Redirect naar de nieuwe pagina met de ingevulde gegevens
             $_SESSION['naam'] = $naam;
             $_SESSION['email'] = $email;
             $_SESSION['bericht'] = $bericht;
+           
             header("Location: verstuurt.php");
             exit();
         } else {
