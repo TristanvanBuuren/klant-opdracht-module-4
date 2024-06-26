@@ -29,11 +29,12 @@ include ($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_co
             </div>
            
               
-                <div>
-                    <a href="<?=BASEURL_LOGIN;?>/uitloggen.php" class="btn btn-primary">Uitloggen</a>
-                </div>
-           <div><a href="<?=BASEURL_CMS;?>contactoverzicht.php" class="btn btn-primary">Contact Overzicht</a></div>
-            <div><a class="btn btn-primary" href="<?= BASEURL_CMS ?>informatie/">Informatie pagina</a></div>
+                <button class="btn btn-primary">
+                    <a href="../login/uitloggen.php" class="button-deco">Uitloggen</a>
+                </button>
+           
+        </div>
+        <div><a href="<?=BASEURL_CMS;?>contactoverzicht.php" class="btn btn-primary">Contact Overzicht</a></div>
                     <div><a href="<?=BASEURL_CMS;?>index.php" class="btn btn-primary">Tuin/review pagina</a></div>
         </div>
     </div>
