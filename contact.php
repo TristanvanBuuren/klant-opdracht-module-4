@@ -100,6 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit">Verstuur</button>
         </form>
         <div class="contact-info">
+        <img src="assets/img/henrik.png" alt="Hendrik Hogendijk" width="150" height="100">
             <h2>Neem Contact Op</h2>
             <?php
         $sql = "SELECT info_tekst FROM informatie WHERE info_type = 1";
@@ -117,18 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $liqry->close();
         }
         ?>
-            
-            <div class="social-links">
-                <a href="#">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
+      
             <p><b>Openingstijden:</b></p>
             <?php
         $sql = "SELECT info_tekst FROM informatie WHERE info_type = 2";
@@ -147,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         ?>
    
-            <img src="assets/img/henrik.png" alt="Hendrik Hogendijk" width="150" height="100">
+            
         </div>
     </div>
 </body>
