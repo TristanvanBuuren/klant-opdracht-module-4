@@ -30,7 +30,7 @@ include ($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_co
            
               
                 <button class="btn btn-primary">
-                    <a href="../../login/uitloggen.php" class="button-deco">Uitloggen</a>
+                    <a href="../login/uitloggen.php" class="button-deco">Uitloggen</a>
                 </button>
            
         </div>
