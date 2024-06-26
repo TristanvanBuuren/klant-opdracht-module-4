@@ -37,7 +37,7 @@
         }
         ?>
     </div>
-    <div class="d"></div>
+    <!-- <div class="d"></div> -->
 </div>
 <!-- <div class="footer">
     <div class="footer-contact">Tel: +31 6 12 34 56 78 <br> Sms: 06 00 00 00 00 <br> email: HendrikHogendijk@klantopdract.glu.nl</div>

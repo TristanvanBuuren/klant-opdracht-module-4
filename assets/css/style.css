@@ -456,7 +456,7 @@
 }
 
 .footer-contact {
-    width: 32vw;
+    width: 49vw;
 
     padding-top: 5vh;
     padding-left: 2vw;
@@ -465,15 +465,46 @@
 }
 
 .footer-dagen {
-    width: 32vw;
+    width: 49vw;
 
     padding-top: 5vh;
 
     color: white;
 }
 
-.d {
-    width: 32vw;
+@media (max-width: 768px) {
+    .footer {
+        margin-bottom: 0vh;
+    
+        background-color: rgb(24, 18, 63);
+        width: 100%;
+
+        min-height: 35vh;
+        height: fit-content;
+    
+        display: flex;
+        gap: 2vw;
+    }
+    
+    .footer-contact {
+        width: 49vw;
+    
+        padding-top: 5vh;
+        padding-left: 2vw;
+    
+        color: white;
+
+        text-wrap:wrap;
+        overflow-wrap:break-word;
+    }
+    
+    .footer-dagen {
+        width: 49vw;
+    
+        padding-top: 5vh;
+    
+        color: white;
+    }
 }
 
 /* MARK: Algemeen
