@@ -1,0 +1,42 @@
+<?php 
+include('core/headeradmin.php');
+// echo BASEURL_CMS
+?>
+
+<div class="row">
+        <table class="table">
+            <tr>
+               
+                <th>ID</th>
+                <th>Naam</th>
+                <th>Email</th>
+                <th>Bericht</th>
+            </tr>
+            <?php
+            $counter = 1; // teller van de rij
+            $sql = "SELECT id, naam, email, bericht FROM contact ORDER BY id ASC";
+            $liqry = $con->prepare($sql);
+            if ($liqry === false) {
+                echo mysqli_error($con);
+            } else {
+                $liqry->bind_result($id, $naam, $email, $bericht);
+                if ($liqry->execute()) {
+                    $liqry->store_result();
+                    while ($liqry->fetch()) {
+                        ?>
+                        <tr>
+                         
+                            <td><?php echo $id; ?></td>
+                            <td><?php echo $naam; ?></td>
+                            <td><?php echo $email; ?></td>
+                            <td><?php echo $bericht; ?></td>
+                        </tr>
+                        <?php
+                        $counter++;
+                    }
+                }
+                $liqry->close();
+            }
+            ?>
+        </table>
+    </div>

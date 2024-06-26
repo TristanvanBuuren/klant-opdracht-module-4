@@ -45,10 +45,16 @@ include ($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_co
                 <button class="btn btn-primary"><a href="login/login.php" class="button-deco">Inloggen</a></button>
             <?php endif; ?>
         </div>
+        <div><a href="<?=BASEURL_CMS;?>contactoverzicht.php" class="btn btn-primary">Contact Overzicht</a></div>
+                    <div><a href="<?=BASEURL_CMS;?>index.php" class="btn btn-primary">Tuin/review pagina</a></div>
+
+                  
         <div class="g">
             <!-- <button class="btn btn-primary"><a class="button-deco" href="<?= BASEURL_CMS ?>admin_account.php">Admin thuispagina</a></button> -->
             <button class="btn btn-primary"><a class="button-deco" href="<?= BASEURL_CMS ?>informatie/">Informatie pagina</a></button>
         </div>
+    
+        
     </div>
     <?php
     if (!isset($_SESSION['admin_ingelogd']) || $_SESSION['admin_ingelogd'] !== true) {
