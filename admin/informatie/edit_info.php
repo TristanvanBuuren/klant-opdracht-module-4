@@ -87,7 +87,7 @@ if ($liqry === false) {
             <form action="edit_info.php?info_id=<?php echo $info_id; ?>" method="post">
                 <div class="form-floating mb-3">
                     <input type="number" class="form-control" id="floatingInput" placeholder="0" name="info_id" value="<?php echo $info_id ?>" required>
-                    <label for="floatingInput">Info ID</label>
+                    <label for="floatingInput">ID</label>
                 </div>
                 <div class="form-floating mb-3">
                     <select class="form-control" id="floatingInput" name="info_type">
@@ -95,7 +95,7 @@ if ($liqry === false) {
                         <option value="1" <?php if($info_type === 1){echo "selected"; }?>>1 - Contact</option>
                         <option value="2" <?php if($info_type === 2){echo "selected"; }?>>2 - Werktijden</option>
                     </select>
-                    <label for="floatingInput">Info Type</label>
+                    <label for="floatingInput">Type</label>
                 </div>
                 <div class="form-floating mb-3">
                     <select class="form-control" id="floatingInput" name="info_prefix">
@@ -107,13 +107,13 @@ if ($liqry === false) {
                         <option value="Zaterdag:" <?php if($info_prefix === 5){echo "selected"; }?>>5 - Zaterdag:</option>
                         <option value="Zondag:" <?php if($info_prefix === 6){echo "selected"; }?>>6 - Zondag:</option>
                     </select>
-                    <label for="floatingInput">Info Prefix</label>
+                    <label for="floatingInput">Voorstukje</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingInput" placeholder="00000000" name="info_tekst" value="<?php echo $info_tekst ?>" required>
-                    <label for="floatingInput">Info Tekst</label>
+                    <label for="floatingInput">Achterstuk</label>
                 </div>
-                <input type="submit" name="submit" value="Save">
+                <button type="submit" name="submit"class="button4" value="Save">Wijzigen</button>
             </form>
             <?php
         } else {

@@ -17,12 +17,12 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
 <div class="row pd-l-1vw">
     <table class="table">
         <tr>
-            <th>Wijzigen</th>
-            <th>Verwijderen</th>
-            <th>info_id</th>
-            <th>info_type</th>
-            <th>info_prefix</th>
-            <th>info_tekst</th>
+            <th></th>
+            <th></th>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Voorstukje</th>
+            <th>Achterstuk</th>
         </tr>
         <?php
         $sql = "SELECT info_id, info_type, info_prefix, info_tekst FROM informatie";
@@ -45,7 +45,15 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
                         </td>
                         <td><?php echo $info_id; ?></td>
                         <td>
-                            <?php echo $info_type; ?>
+                            <?php 
+                            if ($info_type == 1){
+                                echo $info_type . " - Contact info (Links)";
+                            }
+                            if ($info_type == 2){
+                                echo $info_type . " - Werk info (Rechts)";
+                            }
+                            // echo $info_type; 
+                            ?>
                         </td>
                         <td><?php echo $info_prefix; ?></td>
                         <td><?php echo $info_tekst; ?></td>
@@ -57,7 +65,7 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
         }
         ?>
     </table>
-    <a class="button-deco btn btn-success mw-100p" href="./add_info.php">ADD</a>
+    <a class="button-deco btn btn-success mw-100p" href="./add_info.php">Toevoegen</a>
 </div>
 <?php
 include('../core/footeradmin.php');

@@ -5,7 +5,6 @@ include('core/headeradmin.php');
 
 <head>
     <title>Reviews</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <div class="row">
@@ -13,7 +12,7 @@ include('core/headeradmin.php');
         <tr>
             <th>ID</th>
             <th>Foto</th>
-            <th>Review</th>
+            <th>Recensie</th>
             <th>Persoon</th>
         </tr>
         <?php
@@ -43,7 +42,7 @@ include('core/headeradmin.php');
                         </tr>
                         <?php
                     } else {
-                        echo "Geen review gevonden met de opgegeven id.";
+                        echo "Geen Recensie gevonden met de opgegeven id.";
                     }
                 }
                 $liqry->close();
@@ -54,7 +53,7 @@ include('core/headeradmin.php');
 
     <div class="row">
         <form action="" method="post">
-            <button type="submit" name="submit" class="button5">Delete</button>
+            <button type="submit" name="submit" class="button5">Verwijderen</button>
             <input type="hidden" name="id" value="<?php echo $id; ?>">
         </form>
     </div>
@@ -69,7 +68,7 @@ include('core/headeradmin.php');
         $deleteqry->bind_param('i', $id);
 
         if ($deleteqry->execute()) {
-            $redirectUrl = BASEURL . "admin/admin_account.php";
+            $redirectUrl = BASEURL . "admin/index.php";
             header("Location: " . $redirectUrl);
             exit();
         } else {

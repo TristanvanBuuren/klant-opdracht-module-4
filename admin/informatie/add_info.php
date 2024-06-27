@@ -44,13 +44,24 @@ if (isset($_POST["submit"])) {
         $errors[] = "info tekst is required.";
     }
 
+    // Check if the ID already exists
+    $checkQuery = "SELECT * FROM informatie WHERE info_id = ?";
+    $checkStmt = $con->prepare($checkQuery);
+    $checkStmt->bind_param('i', $info_id);
+    $checkStmt->execute();
+    $result = $checkStmt->get_result();
+    if ($result->num_rows > 0) {
+        $errors[] = "ID already exists.";
+    }
+    $checkStmt->close();
+
     if (empty($errors)) {
-        $sql = "INSERT INTO informatie (info_id, info_type, info_tekst) VALUES (?,?,?)";
+        $sql = "INSERT INTO informatie (info_id, info_type, info_prefix, info_tekst) VALUES (?, ?, ?, ?)";
         $insertqry = $con->prepare($sql);
         if ($insertqry === false) {
             echo mysqli_error($con);
         } else {
-            $insertqry->bind_param('iss', $info_id, $info_type, $info_tekst);
+            $insertqry->bind_param('isss', $info_id, $info_type, $info_prefix, $info_tekst);
             if ($insertqry->execute()) {
                 echo "Product added successfully!";
                 header("Location: index.php");
@@ -70,19 +81,19 @@ if (isset($_POST["submit"])) {
 <form action="add_info.php" method="post">
     <div class="form-floating mb-3">
         <input type="number" class="form-control" id="floatingInput" placeholder="0" name="info_id" required>
-        <label for="floatingInput">Info ID</label>
+        <label for="floatingInput">ID</label>
     </div>
     <div class="form-floating mb-3">
         <select class="form-control" id="floatingInput" name="info_type">
-            <option selected>Open to pick an option</option>
+            <option selected> Open om een optie te kiezen.</option>
             <option value="1">1 - Contact</option>
             <option value="2">2 - Werktijden</option>
         </select>
-        <label for="floatingInput">Info Type</label>
+        <label for="floatingInput">Type</label>
     </div>
     <div class="form-floating mb-3">
         <select class="form-control" id="floatingInput" name="info_prefix">
-            <option selected>Open to pick an option</option>
+            <option selected>Open om een optie te kiezen.</option>
             <option value="tel">1 - tel</option>
             <option value="sms">2 - sms</option>
             <option value="mailto">3 - email</option>
@@ -90,13 +101,13 @@ if (isset($_POST["submit"])) {
             <option value="Zaterdag:">5 - Zaterdag:</option>
             <option value="Zondag:">6 - Zondag:</option>
         </select>
-        <label for="floatingInput">Info Prefix</label>
+        <label for="floatingInput">Voorstukje</label>
     </div>
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="floatingInput" placeholder="tel: 00000000" name="info_tekst" required>
-        <label for="floatingInput">Info Tekst</label>
+        <label for="floatingInput">Achterstuk</label>
     </div>
-    <input type="submit" name="submit" value="Save">
+    <button type="submit" name="submit" class="button4">Toevoegen</button>
 </form>
 <?php
 include ('../core/footeradmin.php');
