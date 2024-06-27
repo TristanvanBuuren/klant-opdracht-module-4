@@ -541,6 +541,18 @@
   overflow-wrap: break-word;
 }
 
+.t-col-black {
+    color: black;
+}
+
+.t-col-white {
+    color: white;
+}
+
+.t-deco-link {
+    text-decoration: underline;
+}
+
 /* MARK: contact pagina css
 */
 

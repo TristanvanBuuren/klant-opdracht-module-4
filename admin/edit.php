@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
 <body>
     <form method="post">
         <div class="mb-3">
-            <label for="numberInput" class="form-label">ID</label>
+            <label for="floatingInput" class="form-label">ID</label>
             <input type="number" name="id" class="form-control" id="numberInput" placeholder="ID" value="<?php echo $id; ?>" required>
         </div>
         <div class="mb-3">
@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
             <label for="textInput" class="form-label">Persoon</label>
             <input type="text" name="persoon" class="form-control" id="persoon" placeholder="Persoon" value="<?php echo $persoon; ?>">
         </div>
-        <button type="submit" name="submit" class="button4">Wijzigen</button>
+        <button type="submit" name="submit" value="Save">Wijzigen</button>
     </form>
 </body>
 </html>

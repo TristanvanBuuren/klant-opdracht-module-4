@@ -12,10 +12,10 @@
                 $liqry->store_result();
                 while ($liqry->fetch()) {
                     if ($info_prefix != 'mailto') {
-                    echo $info_prefix . ": " . "<a href='" . $info_prefix . ":" . $info_tekst ."'>" . $info_tekst . "</a>" ."<br>";
+                    echo $info_prefix . ": " . "<a class='t-col-white t-deco-link' href='" . $info_prefix . ":" . $info_tekst ."'>" . $info_tekst . "</a>" ."<br>";
                     }
                     if ($info_prefix == 'mailto') {
-                        echo "e-mail" . ": " . "<a href='" . $info_prefix . ":" . $info_tekst ."'>" . $info_tekst . "</a>" ."<br>";
+                        echo "e-mail" . ": " . "<a class='t-col-white t-deco-link' href='" . $info_prefix . ":" . $info_tekst ."'>" . $info_tekst . "</a>" ."<br>";
                     }
                 }
             }

@@ -17,8 +17,8 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
 <div class="row pd-l-1vw">
     <table class="table">
         <tr>
-            <th>Wijzigen</th>
-            <th>Verwijderen</th>
+            <th></th>
+            <th></th>
             <th>info_id</th>
             <th>info_type</th>
             <th>info_prefix</th>
@@ -45,7 +45,15 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
                         </td>
                         <td><?php echo $info_id; ?></td>
                         <td>
-                            <?php echo $info_type; ?>
+                            <?php 
+                            if ($info_type == 1){
+                                echo $info_type . " - Contact info (Links)";
+                            }
+                            if ($info_type == 2){
+                                echo $info_type . " - Werk info (Rechts)";
+                            }
+                            // echo $info_type; 
+                            ?>
                         </td>
                         <td><?php echo $info_prefix; ?></td>
                         <td><?php echo $info_tekst; ?></td>
