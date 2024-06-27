@@ -6,11 +6,11 @@ include('core/headeradmin.php');
 <div class="row pd-l-1vw">
         <table class="table">
             <tr>
-                <th>EDIT</th>
-                <th>DELETE</th>
+                <th></th>
+                <th></th>
                 <th>ID</th>
                 <th>Foto</th>
-                <th>Review</th>
+                <th>Recensie</th>
                 <th>Persoon</th>
             </tr>
             <?php
@@ -26,8 +26,8 @@ include('core/headeradmin.php');
                     while ($liqry->fetch()) {
                         ?>
                         <tr>
-                            <td><a href="edit.php?id=<?php echo $id; ?>"><button class="button1">Edit</button></a></td>
-                            <td><a href="delete.php?id=<?php echo $id; ?>"><button class="button2">Delete</button></a></td>
+                            <td><a href="edit.php?id=<?php echo $id; ?>"><button class="button1">Wijzigen</button></a></td>
+                            <td><a href="delete.php?id=<?php echo $id; ?>"><button class="button2">Verwijderen</button></a></td>
                             <td><?php echo $id; ?></td>
                             <td><?php echo $foto; ?></td>
                             <td><?php echo $review; ?></td>
