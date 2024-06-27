@@ -267,7 +267,8 @@
 @media (max-width: 768px) {
   .reviews {
     width: 80vw;
-    height: 20vh;
+    min-height: 20vh;
+    height: fit-content;
     margin-bottom: 5vh;
   }
 
@@ -276,10 +277,10 @@
     /* Verander naar 10vw voor betere centrering op mobiel */
     margin-top: 4vh;
     padding-left: 1vw;
-    min-height: fit-content;
+    min-height: 20vh;
     width: 80vw;
     /* Verander naar 80vw voor betere responsiviteit */
-    height: 20vh;
+    height: fit-content;
   }
 }
 
