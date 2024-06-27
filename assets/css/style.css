@@ -193,10 +193,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 36px;
-  /* Pas de tekstgrootte aan naar wens */
+  font-size: 2.25em; 
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.5);
   text-align: center;
   width: 80%;
   opacity: 1;
@@ -206,10 +205,11 @@
 
 @media (max-width: 768px) {
   .slide-text {
-    top: 15vh;
-    font-size: 24px;
+    top: 15vh; 
+    font-size: 1.5em; 
     /* Kleinere tekstgrootte voor mobiele apparaten */
   }
+  
 
   .slideshow {
     position: relative;
@@ -246,12 +246,11 @@
 
 .review-name {
   height: 4vh;
-
-  font-size: 20px;
+  font-size: 1.25em; 
   font-weight: 600;
-
   /* background-color: blue; */
 }
+
 
 .review-text {
   padding-top: 1vh;
@@ -640,7 +639,10 @@ form button {
   position: absolute;
   top: 2em;
   right: 1em;
+  display: block; 
+  margin: 0 auto;
 }
+
 .social-links {
   margin-top: 1em;
   display: flex;
