@@ -41,4 +41,9 @@ include('core/headeradmin.php');
             }
             ?>
         </table>
+        <div class="row">
+    <div class="col-12">
+        <a href="add.php"><button class="button3">Toevoegen</button></a>
+    </div>
+</div>
     </div>

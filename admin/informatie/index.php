@@ -19,10 +19,10 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
         <tr>
             <th></th>
             <th></th>
-            <th>info_id</th>
-            <th>info_type</th>
-            <th>info_prefix</th>
-            <th>info_tekst</th>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Voorstukje</th>
+            <th>Achterstuk</th>
         </tr>
         <?php
         $sql = "SELECT info_id, info_type, info_prefix, info_tekst FROM informatie";
@@ -65,7 +65,7 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
         }
         ?>
     </table>
-    <a class="button-deco btn btn-success mw-100p" href="./add_info.php">ADD</a>
+    <a class="button-deco btn btn-success mw-100p" href="./add_info.php">Toevoegen</a>
 </div>
 <?php
 include('../core/footeradmin.php');

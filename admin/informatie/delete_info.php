@@ -14,16 +14,16 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
     exit();
 }
 ?>
-Are you sure you want to delete:
+Wil je het zeker weten verwijderen?
 <div class="row">
     <table class="table">
         <tr>
             <th></th>
             <th></th>
-            <th>info_id</th>
-            <th>info_type</th>
-            <th>info_prefix</th>
-            <th>info_tekst</th>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Voorstukje</th>
+            <th>Achterstuk</th>
         </tr>
 <?php
 if (isset($_GET['info_id'])) {
@@ -58,7 +58,7 @@ if (isset($_GET['info_id'])) {
                 ?>
                 <tr>
                 <td>
-                        <button class="btn btn-danger"><a class="button-deco" href="delete_info.php?info_id=<?php echo $info_id; ?>">YES</a></button>
+                        <button class="btn btn-danger"><a class="button-deco" href="delete_info.php?info_id=<?php echo $info_id; ?>">JA</a></button>
                     </td>
                     <td>
                         <button class="btn btn-warning"><a class="button-deco" href="./index.php">NO</a></button>

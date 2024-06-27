@@ -29,15 +29,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Add Review</title>
-</head>
-<body>
+
     <form method="post">
         <div class="mb-3">
             <label for="numberInput" class="form-label">ID</label>
@@ -48,8 +40,8 @@ if (isset($_POST['submit'])) {
             <input type="text" name="foto" class="form-control" id="foto" placeholder="Foto" value="<?php echo $foto; ?>">
         </div>
         <div class="mb-3">
-            <label for="textInput" class="form-label">Review</label>
-            <textarea name="review" class="form-control" id="review" placeholder="Review"><?php echo $review; ?></textarea>
+            <label for="textInput" class="form-label">Recensie</label>
+            <textarea name="review" class="form-control" id="review" placeholder="Recensie"><?php echo $review; ?></textarea>
         </div>
         <div class="mb-3">
             <label for="textInput" class="form-label">Persoon</label>
@@ -97,7 +89,7 @@ if (isset($_POST['submit'])) {
         $insertqry->bind_param('isss', $new_id, $foto, $review, $persoon);
 
         if ($insertqry->execute()) {
-            $redirectUrl = BASEURL . "admin/admin_account.php";
+            $redirectUrl = BASEURL . "admin/index.php";
             header("Location: " . $redirectUrl);
             exit();
         } else {
