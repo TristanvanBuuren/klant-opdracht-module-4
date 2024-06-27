@@ -22,6 +22,7 @@ Are you sure you want to delete:
             <th></th>
             <th>info_id</th>
             <th>info_type</th>
+            <th>info_prefix</th>
             <th>info_tekst</th>
         </tr>
 <?php
@@ -44,13 +45,13 @@ if (isset($_GET['info_id'])) {
     header("Location: index.php");
     exit();
 } else {
-    $sql = "SELECT info_id, info_type, info_tekst FROM informatie WHERE info_id = ?";
+    $sql = "SELECT info_id, info_type, info_prefix,  info_tekst FROM informatie WHERE info_id = ?";
     $liqry = $con->prepare($sql);
     if ($liqry === false) {
         echo mysqli_error($con);
     } else {
         $liqry->bind_param('i', $_GET['id']);
-        $liqry->bind_result($info_id, $info_type, $info_tekst);
+        $liqry->bind_result($info_id, $info_type, $info_prefix, $info_tekst);
         if ($liqry->execute()) {
             $liqry->store_result();
             while ($liqry->fetch()) {
@@ -65,6 +66,9 @@ if (isset($_GET['info_id'])) {
                     <td><?php echo $info_id; ?></td>
                         <td>
                             <?php echo $info_type; ?>
+                        </td>
+                        <td>
+                            <?php echo $info_prefix; ?>
                         </td>
                         <td><?php echo $info_tekst; ?></td>
                     </tr>

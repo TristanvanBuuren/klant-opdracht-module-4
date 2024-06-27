@@ -3,35 +3,35 @@ include('core/headeradmin.php');
 // echo BASEURL_CMS
 ?>
 
-<div class="row pd-l-1vw">
+<div class="row">
         <table class="table">
             <tr>
-                <th></th>
-                <th></th>
+               
                 <th>ID</th>
-                <th>Foto</th>
-                <th>Recensie</th>
-                <th>Persoon</th>
+                <th>Naam</th>
+                <th>Email</th>
+                <th>Bericht</th>
+                <th>Tijd Verstuurt</th>
             </tr>
             <?php
             $counter = 1; // teller van de rij
-            $sql = "SELECT id, foto, review, persoon FROM hoofdpagina ORDER BY id ASC";
+            $sql = "SELECT id, naam, email, bericht, tijd_gemaakt FROM contact ORDER BY tijd_gemaakt DESC";
             $liqry = $con->prepare($sql);
             if ($liqry === false) {
                 echo mysqli_error($con);
             } else {
-                $liqry->bind_result($id, $foto, $review, $persoon);
+                $liqry->bind_result($id, $naam, $email, $bericht, $tijd);
                 if ($liqry->execute()) {
                     $liqry->store_result();
                     while ($liqry->fetch()) {
                         ?>
                         <tr>
-                            <td><a href="edit.php?id=<?php echo $id; ?>"><button class="button1">Wijzigen</button></a></td>
-                            <td><a href="delete.php?id=<?php echo $id; ?>"><button class="button2">Verwijderen</button></a></td>
+                         
                             <td><?php echo $id; ?></td>
-                            <td><?php echo $foto; ?></td>
-                            <td><?php echo $review; ?></td>
-                            <td><?php echo $persoon; ?></td>
+                            <td><?php echo $naam; ?></td>
+                            <td><?php echo $email; ?></td>
+                            <td><?php echo $bericht; ?></td>
+                            <td><?php echo $tijd; ?></td>
                         </tr>
                         <?php
                         $counter++;

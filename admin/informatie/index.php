@@ -14,38 +14,40 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
     exit();
 }
 ?>
-<div class="row">
+<div class="row pd-l-1vw">
     <table class="table">
         <tr>
-            <th></th>
-            <th></th>
+            <th>Wijzigen</th>
+            <th>Verwijderen</th>
             <th>info_id</th>
             <th>info_type</th>
+            <th>info_prefix</th>
             <th>info_tekst</th>
         </tr>
         <?php
-        $sql = "SELECT info_id, info_type, info_tekst FROM informatie";
+        $sql = "SELECT info_id, info_type, info_prefix, info_tekst FROM informatie";
         $liqry = $con->prepare($sql);
         if ($liqry === false) {
             echo mysqli_error($con);
         } else {
-            $liqry->bind_result($info_id, $info_type, $info_tekst);
+            $liqry->bind_result($info_id, $info_type, $info_prefix, $info_tekst);
             if ($liqry->execute()) {
                 $liqry->store_result();
                 while ($liqry->fetch()) {
                     ?>
                     <tr>
                         <td>
-                            <button class="btn btn-warning"><a class="button-deco" href="edit_info.php?id=<?php echo $info_id; ?>">EDIT</a></button>
+                            <button class="btn btn-warning"><a class="button-deco" href="edit_info.php?id=<?php echo $info_id; ?>">Wijzigen</a></button>
                         </td>
                         <td>
                             <!-- <a href="edit_product.php?info_id=<?php echo $info_id; ?>"><?php echo $info_id; ?></a> -->
-                            <button class="btn btn-danger"><a class="button-deco" href="delete_info.php?id=<?php echo $info_id; ?>">DELETE</a></button>
+                            <button class="btn btn-danger"><a class="button-deco" href="delete_info.php?id=<?php echo $info_id; ?>">Verwijderen</a></button>
                         </td>
                         <td><?php echo $info_id; ?></td>
                         <td>
                             <?php echo $info_type; ?>
                         </td>
+                        <td><?php echo $info_prefix; ?></td>
                         <td><?php echo $info_tekst; ?></td>
                     </tr>
                     <?php
@@ -55,7 +57,7 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
         }
         ?>
     </table>
-    <a class="button-deco btn btn-success" href="./add_info.php">ADD</a>
+    <a class="button-deco btn btn-success mw-100p" href="./add_info.php">ADD</a>
 </div>
 <?php
 include('../core/footeradmin.php');

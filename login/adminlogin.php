@@ -27,7 +27,9 @@ include('core/headerlogin.php');
                                 <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
                             </div>
-                           
+                            <div id="register-link" class="text-right">
+                                <a href="./login.php" class="text-info">Login here</a>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -54,10 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['admin_ingelogd'] = true;
             $_SESSION['username'] = $admin_username;
             $_SESSION['user_id'] = $row['id']; // Sla het id van de gebruiker op in een sessievariabele
-            $redirectUrl = "../admin/admin_account.php";
+            $redirectUrl = "../admin/index.php";
             header("Location: " . $redirectUrl);
             exit();
-            
         } else {
             $error_message = "Ongeldige gebruikersnaam of admin wachtwoord.";
         }

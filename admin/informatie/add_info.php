@@ -26,18 +26,22 @@ if (isset($_POST["submit"])) {
     // Sanitize inputs
     $info_id = test_input($_POST['info_id']);
     $info_type = test_input($_POST['info_type']);
+    $info_prefix = test_input($_POST['info_prefix']);
     $info_tekst = test_input($_POST['info_tekst']);
 
     // Validate inputs
     $errors = [];
     if (empty($info_id) || !is_numeric($info_id)) {
-        $errors[] = "Invalid category ID.";
+        $errors[] = "Invalid info ID.";
     }
     if (empty($info_type)) {
-        $errors[] = "Product name is required.";
+        $errors[] = "info type is required.";
+    }
+    if (empty($info_prefix)) {
+        $errors[] = "info prefix is required.";
     }
     if (empty($info_tekst)) {
-        $errors[] = "Product description is required.";
+        $errors[] = "info tekst is required.";
     }
 
     if (empty($errors)) {
@@ -73,11 +77,20 @@ if (isset($_POST["submit"])) {
             <option selected>Open to pick an option</option>
             <option value="1">1 - Contact</option>
             <option value="2">2 - Werktijden</option>
-            <!-- <option value="3">3 - Sociale Media</option> -->
-            <!-- <option value="4">4 - Pond</option>
-            <option value="5">5 - Roebel</option> -->
         </select>
         <label for="floatingInput">Info Type</label>
+    </div>
+    <div class="form-floating mb-3">
+        <select class="form-control" id="floatingInput" name="info_prefix">
+            <option selected>Open to pick an option</option>
+            <option value="tel">1 - tel</option>
+            <option value="sms">2 - sms</option>
+            <option value="mailto">3 - email</option>
+            <option value="Maandag - vrijdag:">4 - Maandag - vrijdag:</option>
+            <option value="Zaterdag:">5 - Zaterdag:</option>
+            <option value="Zondag:">6 - Zondag:</option>
+        </select>
+        <label for="floatingInput">Info Prefix</label>
     </div>
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="floatingInput" placeholder="tel: 00000000" name="info_tekst" required>
