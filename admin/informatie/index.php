@@ -17,8 +17,8 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
 <div class="row pd-l-1vw">
     <table class="table">
         <tr>
-            <th></th>
-            <th></th>
+            <th>Wijzigen</th>
+            <th>Verwijderen</th>
             <th>info_id</th>
             <th>info_type</th>
             <th>info_prefix</th>
@@ -37,11 +37,11 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
                     ?>
                     <tr>
                         <td>
-                            <button class="btn btn-warning"><a class="button-deco" href="edit_info.php?id=<?php echo $info_id; ?>">EDIT</a></button>
+                            <button class="btn btn-warning"><a class="button-deco" href="edit_info.php?id=<?php echo $info_id; ?>">Wijzigen</a></button>
                         </td>
                         <td>
                             <!-- <a href="edit_product.php?info_id=<?php echo $info_id; ?>"><?php echo $info_id; ?></a> -->
-                            <button class="btn btn-danger"><a class="button-deco" href="delete_info.php?id=<?php echo $info_id; ?>">DELETE</a></button>
+                            <button class="btn btn-danger"><a class="button-deco" href="delete_info.php?id=<?php echo $info_id; ?>">Verwijderen</a></button>
                         </td>
                         <td><?php echo $info_id; ?></td>
                         <td>

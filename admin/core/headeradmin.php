@@ -24,17 +24,11 @@ include ($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_co
     <div class="header-admin">
         <div class="e">ADMIN PAGINA</div>
         <div class="f">
-            <div>
-                <a href="<?= BASEURL ?>index.php" class="btn btn-primary">Home</a>
-            </div>
-           
-              
-            <div>
-                    <a href="<?=BASEURL_LOGIN;?>uitloggen.php" class="btn btn-primary">Uitloggen</a>
-                </div>
-           <div><a href="<?=BASEURL_CMS;?>contactoverzicht.php" class="btn btn-primary">Contact Overzicht</a></div>
+            <div><a href="<?= BASEURL ?>index.php" class="btn btn-primary">Home</a></div>
+            <div><a href="<?=BASEURL_CMS;?>index.php" class="btn btn-primary">Tuin/review pagina</a></div>
             <div><a class="btn btn-primary" href="<?= BASEURL_CMS ?>informatie/">Informatie pagina</a></div>
-                    <div><a href="<?=BASEURL_CMS;?>index.php" class="btn btn-primary">Tuin/review pagina</a></div>
+           <div><a href="<?=BASEURL_CMS;?>contactoverzicht.php" class="btn btn-primary">Contact Overzicht</a></div>
+           <div><a href="<?=BASEURL_LOGIN;?>uitloggen.php" class="btn btn-primary">Uitloggen</a></div>
         </div>
     </div>
     <?php
