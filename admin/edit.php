@@ -1,11 +1,6 @@
 <?php
 include('core/headeradmin.php');
 
-// Controleer of de databaseverbinding is ingesteld
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
 // Variabelen voor de ingevoerde waarden
 $id = '';
 $foto = '';
@@ -75,6 +70,8 @@ if (isset($_POST['submit'])) {
     $check_stmt->fetch();
     $check_stmt->close();
 
+
+    // Validatie
     if ($count > 0) {
         echo "Deze id is al in gebruik. Kies een andere id.";
     } else if ($new_id === false || $new_id <= 0) {
@@ -88,6 +85,7 @@ if (isset($_POST['submit'])) {
     } else if (!empty($persoon) && !preg_match("/^[a-zA-Z0-9 .,\"-]+(?:'?[a-zA-Z0-9 .,\"-])*$/", $persoon)) {
         echo "Ongeldige persoon. Gebruik alleen letters, cijfers, spaties, en de symbolen . , ' \" -";
     } else {
+        // Data in database verplaatsen met de variablen.
         $sql = "UPDATE hoofdpagina SET id = ?, foto = ?, review = ?, persoon = ? WHERE id = ?";
         $updateqry = $con->prepare($sql);
 

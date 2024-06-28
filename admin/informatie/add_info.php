@@ -1,10 +1,6 @@
 <?php
 include ('../core/headeradmin.php');
 
-// Controleer of de databaseverbinding is ingesteld
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
 
 if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
     // Ga verder met de code
@@ -21,15 +17,15 @@ function test_input($data)
     $data = htmlspecialchars($data);
     return $data;
 }
-
+// Als de knop is geklikt dan gebeurt dit
 if (isset($_POST["submit"])) {
-    // Sanitize inputs
+    // Validatie
     $info_id = test_input($_POST['info_id']);
     $info_type = test_input($_POST['info_type']);
     $info_prefix = test_input($_POST['info_prefix']);
     $info_tekst = test_input($_POST['info_tekst']);
 
-    // Validate inputs
+
     $errors = [];
     if (empty($info_id) || !is_numeric($info_id)) {
         $errors[] = "Invalid info ID.";
@@ -55,6 +51,7 @@ if (isset($_POST["submit"])) {
     }
     $checkStmt->close();
 
+    // Geen errors, insert product in de database
     if (empty($errors)) {
         $sql = "INSERT INTO informatie (info_id, info_type, info_prefix, info_tekst) VALUES (?, ?, ?, ?)";
         $insertqry = $con->prepare($sql);

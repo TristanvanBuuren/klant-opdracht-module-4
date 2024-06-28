@@ -1,10 +1,10 @@
 <?php 
 include('core/headeradmin.php');
-// echo BASEURL_CMS
 ?>
 
 <div class="row pd-l-1vw">
         <table class="table">
+            <!-- Namen voor de rijtjes -->
             <tr>
                 <th></th>
                 <th></th>
@@ -25,6 +25,7 @@ include('core/headeradmin.php');
                     $liqry->store_result();
                     while ($liqry->fetch()) {
                         ?>
+                        <!-- Rijtjes invullen met data -->
                         <tr>
                             <td><a href="edit.php?id=<?php echo $id; ?>"><button class="button1">Wijzigen</button></a></td>
                             <td><a href="delete.php?id=<?php echo $id; ?>"><button class="button2">Verwijderen</button></a></td>
@@ -41,6 +42,7 @@ include('core/headeradmin.php');
             }
             ?>
         </table>
+        <!-- Toevoeg knop toevoegen -->
         <div class="row">
     <div class="col-12">
         <a href="add.php"><button class="button3">Toevoegen</button></a>

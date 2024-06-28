@@ -1,11 +1,6 @@
 <?php
 include('../core/headeradmin.php');
 
-// Controleer of de databaseverbinding is ingesteld
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
 if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
     // Ga verder met de code
 } else {
@@ -17,6 +12,7 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
 Wil je het zeker weten verwijderen?
 <div class="row">
     <table class="table">
+        <!-- Namen van de rij -->
         <tr>
             <th></th>
             <th></th>
@@ -26,6 +22,7 @@ Wil je het zeker weten verwijderen?
             <th>Achterstuk</th>
         </tr>
 <?php
+// De rij word verwijdert omdat de knop is ingeklikt
 if (isset($_GET['info_id'])) {
     $info_id = $_GET['info_id'];
     $sql = "DELETE FROM informatie WHERE `info_id` = ?";
@@ -41,7 +38,7 @@ if (isset($_GET['info_id'])) {
         }
         $deleteqry->close();
     }
-    // Redirect to prevent resubmission
+  // Terug naar hoofdpagina
     header("Location: index.php");
     exit();
 } else {

@@ -1,14 +1,9 @@
 <?php
 include('core/headeradmin.php');
-
 ?>
-
-<head>
-    <title>Reviews</title>
-</head>
-
 <div class="row">
     <table class="table">
+                 <!-- Rij toevoegen met deze naam -->
         <tr>
             <th>ID</th>
             <th>Foto</th>
@@ -16,7 +11,7 @@ include('core/headeradmin.php');
             <th>Persoon</th>
         </tr>
         <?php
-        // Controleer of de id parameter is meegegeven
+        // Controleer of de id is meegegeven
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
 
@@ -34,6 +29,7 @@ include('core/headeradmin.php');
                     if ($liqry->num_rows > 0) {
                         $liqry->fetch();
                         ?>
+                          <!-- De rij met de data invullen  -->
                         <tr>
                             <td><?php echo $id; ?></td>
                             <td><?php echo $foto; ?></td>
@@ -50,14 +46,13 @@ include('core/headeradmin.php');
         }
         ?>
     </table>
-
+  <!-- Verwijder knop  -->
     <div class="row">
         <form action="" method="post">
             <button type="submit" name="submit" class="button5">Verwijderen</button>
             <input type="hidden" name="id" value="<?php echo $id; ?>">
         </form>
     </div>
-
     <?php
     if (isset($_POST['submit'])) {
         $id = $_POST["id"];

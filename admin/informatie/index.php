@@ -1,11 +1,6 @@
 <?php
 include('../core/headeradmin.php');
 
-// Controleer of de databaseverbinding is ingesteld
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
 if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
     // Ga verder met de code
 } else {
@@ -17,6 +12,7 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
 <div class="row pd-l-1vw">
     <table class="table">
         <tr>
+            <!-- Namen van rijtjes -->
             <th></th>
             <th></th>
             <th>ID</th>
@@ -35,6 +31,7 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
                 $liqry->store_result();
                 while ($liqry->fetch()) {
                     ?>
+                    <!-- Rijtjes teovoegen -->
                     <tr>
                         <td>
                             <button class="btn btn-warning"><a class="button-deco" href="edit_info.php?id=<?php echo $info_id; ?>">Wijzigen</a></button>
@@ -52,7 +49,6 @@ if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
                             if ($info_type == 2){
                                 echo $info_type . " - Werk info (Rechts)";
                             }
-                            // echo $info_type; 
                             ?>
                         </td>
                         <td><?php echo $info_prefix; ?></td>

@@ -1,26 +1,13 @@
 <?php
 include('core/headeradmin.php');
 
-// Controleer of de databaseverbinding is ingesteld
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd']) {
-    // Ga verder met de code
-} else {
-    // Redirect naar uitloggen.php
-    header("Location: ../../login/uitloggen.php");
-    exit();
-}
-
 // Variabelen voor de ingevoerde waarden
 $id = '';
 $foto = '';
 $review = '';
 $persoon = '';
 
-// Als het formulier is ingediend, gebruik dan de ingevoerde waarden
+// Als het formulier is ingevuld dan word het gevalideert en worden de variabelen ingevuld.
 if (isset($_POST['submit'])) {
     $id = filter_var($_POST['id'], FILTER_VALIDATE_INT);
     $foto = htmlspecialchars($_POST['foto']);
@@ -66,6 +53,8 @@ if (isset($_POST['submit'])) {
     $check_stmt->fetch();
     $check_stmt->close();
 
+
+    // Validatie 
     if ($count > 0) {
         echo "Deze id is al in gebruik. Kies een andere id.";
     } else if ($new_id === false || $new_id <= 0) {
@@ -78,7 +67,9 @@ if (isset($_POST['submit'])) {
         echo "Ongeldige foto. Gebruik alleen letters en cijfers en voeg '.png' toe aan het einde van de naam.";
     } else if (!empty($persoon) && !preg_match("/^[a-zA-Z0-9 .,\"-]+(?:'?[a-zA-Z0-9 .,\"-])*$/", $persoon)) {
         echo "Ongeldige persoon. Gebruik alleen letters, cijfers, spaties, en de symbolen . , ' \" -";
-    } else {
+    } 
+    // Alles is OK, dus voeg het toe aan de database
+    else {
         $sql = "INSERT INTO hoofdpagina (id, foto, review, persoon) VALUES (?, ?, ?, ?)";
         $insertqry = $con->prepare($sql);
 

@@ -1,8 +1,6 @@
 <?php
 include ($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_connect.php');
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,19 +10,17 @@ include ($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_co
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= BASEURL; ?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>assets/css/login.css">
-
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <title>Theorie</title>
+    <title>ADMIN</title>
 </head>
-
 <body>
     <div class="header-admin">
         <div class="e">ADMIN PAGINA</div>
         <div class="f">
-            <div><a href="<?= BASEURL ?>index.php" class="btn btn-primary">Home</a></div>
+            <!-- Buttons voor de pagina's -->
+            <div><a href="<?= BASEURL ?>index.php" class="btn btn-primary">Beginpagina</a></div>
             <div><a href="<?=BASEURL_CMS;?>index.php" class="btn btn-primary">Tuin/review pagina</a></div>
             <div><a class="btn btn-primary" href="<?= BASEURL_CMS ?>informatie/">Informatie pagina</a></div>
            <div><a href="<?=BASEURL_CMS;?>contactoverzicht.php" class="btn btn-primary">Contact Overzicht</a></div>
@@ -32,6 +28,7 @@ include ($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_co
            <div>Voor hulp, contacteer ons.</div>
         </div>
     </div>
+    <!-- Als je niet bent ingelogd dan kan je de pagina niet in -->
     <?php
     if (!isset($_SESSION['admin_ingelogd']) || $_SESSION['admin_ingelogd'] !== true) {
         // Redirect naar uitloggen.php
