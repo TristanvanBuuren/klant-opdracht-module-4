@@ -1,66 +1,3 @@
-<?php
-include('assets/core/header.php');
-
-$naam = isset($_POST['naam']) ? $_POST['naam'] : '';
-$email = isset($_POST['email']) ? $_POST['email'] : '';
-$bericht = isset($_POST['bericht']) ? $_POST['bericht'] : '';
-$errors = array();
-
-// Sanitize inputs
-function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize inputs
-    $tijd_gemaakt = date('Y-m-d H:i:s');
-    $naam = test_input($_POST['naam']);
-    $email = test_input($_POST['email']);
-    $bericht = test_input($_POST['bericht']);
-
-    // Validate inputs
-    if (empty($naam)) {
-        $errors[] = "Naam is verplicht.";
-    } elseif (!preg_match("/^[a-zA-Z ]*$/", $naam)) {
-        $errors[] = "Ongeldige naam. Gebruik alleen letters en spaties.";
-    }
-
-    if (empty($email)) {
-        $errors[] = "Email is verplicht.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Ongeldig email adres.";
-    }
-
-    if (empty($bericht)) {
-        $errors[] = "Bericht is verplicht.";
-    }
-
-    if (empty($errors)) {
-        $naam = mysqli_real_escape_string($con, $naam);
-        $email = mysqli_real_escape_string($con, $email);
-        $bericht = mysqli_real_escape_string($con, $bericht);
-
-        $sql = "INSERT INTO contact (naam, email, bericht, tijd_gemaakt) VALUES ('$naam', '$email', '$bericht', '$tijd_gemaakt')";
-
-        if ($con->query($sql) === TRUE) {
-            // Redirect naar de nieuwe pagina met de ingevulde gegevens
-            $_SESSION['naam'] = $naam;
-            $_SESSION['email'] = $email;
-            $_SESSION['bericht'] = $bericht;
-           
-            header("Location: verstuurt.php");
-            exit();
-        } else {
-            echo "Fout bij het opslaan van de gegevens: " . $con->error;
-        }
-    }
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -74,15 +11,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     <form action="" method="post">
             <label for="name">Naam:</label>
-            <input type="text" id="name" name="naam" placeholder="Uw Naam" value="<?php echo $naam; ?>" required>
+            <input type="text" id="name" name="naam" placeholder="Uw Naam" value="<?php echo isset($_POST['naam']) ? $_POST['naam'] : ''; ?>" required>
 
             <label for="email">E-mailadres:</label>
-            <input type="email" id="email" name="email" placeholder="Uw E-mail" value="<?php echo $email; ?>" required>
+            <input type="email" id="email" name="email" placeholder="Uw E-mail" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>" required>
 
             <label for="message">Uw Bericht:</label>
-            <textarea id="message" name="bericht" placeholder="Voer uw vraag of bericht in" required><?php echo $bericht; ?></textarea>
+            <textarea id="message" name="bericht" placeholder="Voer uw vraag of bericht in" required><?php echo isset($_POST['bericht']) ? $_POST['bericht'] : ''; ?></textarea>
 
-            <?php if (!empty($errors)) { ?>
+            <?php 
+            $errors = array();
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $tijd_gemaakt = date('Y-m-d H:i:s');
+                $naam = isset($_POST['naam']) ? trim(stripslashes(htmlspecialchars($_POST['naam']))) : '';
+                $email = isset($_POST['email']) ? trim(stripslashes(htmlspecialchars($_POST['email']))) : '';
+                $bericht = isset($_POST['bericht']) ? trim(stripslashes(htmlspecialchars($_POST['bericht']))) : '';
+
+                if (empty($naam)) {
+                    $errors[] = "Naam is verplicht.";
+                } elseif (!preg_match("/^[a-zA-Z ]*$/", $naam)) {
+                    $errors[] = "Ongeldige naam. Gebruik alleen letters en spaties.";
+                }
+
+                if (empty($email)) {
+                    $errors[] = "Email is verplicht.";
+                } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $errors[] = "Ongeldig email adres.";
+                }
+
+                if (empty($bericht)) {
+                    $errors[] = "Bericht is verplicht.";
+                }
+
+                if (empty($errors)) {
+                    $naam = mysqli_real_escape_string($con, $naam);
+                    $email = mysqli_real_escape_string($con, $email);
+                    $bericht = mysqli_real_escape_string($con, $bericht);
+
+                    $sql = "INSERT INTO contact (naam, email, bericht, tijd_gemaakt) VALUES ('$naam', '$email', '$bericht', '$tijd_gemaakt')";
+
+                    if ($con->query($sql) === TRUE) {
+                        // Redirect naar de nieuwe pagina met de ingevulde gegevens
+                        $_SESSION['naam'] = $naam;
+                        $_SESSION['email'] = $email;
+                        $_SESSION['bericht'] = $bericht;
+                       
+                        header("Location: verstuurt.php");
+                        exit();
+                    } else {
+                        echo "Fout bij het opslaan van de gegevens: " . $con->error;
+                    }
+                }
+            }
+            if (!empty($errors)) { ?>
             <div class="error-messages">
                 <?php foreach ($errors as $error) { ?>
                     <p><?php echo $error; ?></p>
@@ -95,51 +76,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <img src="assets/img/henrik.png" alt="Hendrik Hogendijk" width="150" height="100">
             <h2>Neem Contact Op</h2>
             <?php
-        $sql = "SELECT info_prefix, info_tekst FROM informatie WHERE info_type = 1";
-        $liqry = $con->prepare($sql);
-        if ($liqry === false) {
-            echo mysqli_error($con);
-        } else {
-            $liqry->bind_result($info_prefix, $info_tekst);
-            if ($liqry->execute()) {
-                $liqry->store_result();
-                while ($liqry->fetch()) {
-                    if ($info_prefix != 'mailto') {
-                        echo $info_prefix . ": " . "<a class='t-col-black t-deco-link' href='" . $info_prefix . ":" . $info_tekst ."'>" . $info_tekst . "</a>" ."<br>";
-                        }
-                        if ($info_prefix == 'mailto') {
-                            echo "e-mail" . ": " . "<a class='t-col-black t-deco-link' href='" . $info_prefix . ":" . $info_tekst ."'>" . $info_tekst . "</a>" ."<br>";
-                        }
+            $sql = "SELECT info_prefix, info_tekst FROM informatie WHERE info_type = 1";
+            $liqry = $con->prepare($sql);
+            if ($liqry === false) {
+                echo mysqli_error($con);
+            } else {
+                $liqry->bind_result($info_prefix, $info_tekst);
+                if ($liqry->execute()) {
+                    $liqry->store_result();
+                    while ($liqry->fetch()) {
+                        if ($info_prefix != 'mailto') {
+                            echo $info_prefix . ": " . "<a href='" . $info_prefix . ":" . $info_tekst ."'>" . $info_tekst . "</a>" ."<br>";
+                            }
+                            if ($info_prefix == 'mailto') {
+                                echo "e-mail". ": " . "<a href='" . $info_prefix . ":" . $info_tekst ."'>" . $info_tekst . "</a>" ."<br>";
+                            }
+                    }
                 }
+                $liqry->close();
             }
-            $liqry->close();
-        }
-        ?>
-      
+            ?>
+         
             <p><b>Openingstijden:</b></p>
             <?php
-        $sql = "SELECT info_prefix, info_tekst FROM informatie WHERE info_type = 2";
-        $liqry = $con->prepare($sql);
-        if ($liqry === false) {
-            echo mysqli_error($con);
-        } else {
-            $liqry->bind_result($info_prefix, $info_tekst);
-            if ($liqry->execute()) {
-                $liqry->store_result();
-                while ($liqry->fetch()) {
-                    echo $info_prefix . " " . $info_tekst . "<br>";
+            $sql = "SELECT info_prefix, info_tekst FROM informatie WHERE info_type = 2";
+            $liqry = $con->prepare($sql);
+            if ($liqry === false) {
+                echo mysqli_error($con);
+            } else {
+                $liqry->bind_result($info_prefix, $info_tekst);
+                if ($liqry->execute()) {
+                    $liqry->store_result();
+                    while ($liqry->fetch()) {
+                        echo $info_prefix . " " . $info_tekst . "<br>";
+                    }
                 }
+                $liqry->close();
             }
-            $liqry->close();
-        }
-        ?>
+            ?>
+  
+           
         </div>
     </div>
 </body>
 </html>
-<?php
-
-?>
 <?php
 include('assets/core/footer.php');
 ?>
