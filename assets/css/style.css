@@ -525,43 +525,6 @@
     }
 }
 
-/* MARK: Algemeen
-*/
-
-.button-deco {
-    color: white;
-    text-decoration: none;
-}
-
-.button-deco:hover {
-    color: white;
-    text-decoration: none;
-}
-
-.mw-100vw {
-    max-width: 100vw;
-}
-
-.bg-6F8587 {
-    background-color: #6f8587;
-}
-
-.text-wrap {
-    text-wrap: wrap;
-    overflow-wrap: break-word;
-}
-
-.t-col-black {
-    color: black;
-}
-
-.t-col-white {
-    color: white;
-}
-
-.t-deco-link {
-    text-decoration: underline;
-}
 
 /* MARK: contact pagina css
 */
@@ -624,10 +587,7 @@ form {
     margin-bottom: 1em;
 }
 
-form label,
-form input,
-form textarea,
-form button {
+form label,form input,form textarea,form button {
     width: 100%;
 }
 
@@ -690,8 +650,7 @@ form button {
     margin-top: 2em;
 }
 
-button[type="submit"],
-button.cta {
+button[type="submit"],button.cta {
     background-color: #fe0505;
     color: #fff;
     padding: 1em 2em;
@@ -708,8 +667,7 @@ button.cta {
         padding: 0.5em;
     }
 
-    form,
-    .contact-info {
+    form,.contact-info {
         width: 100%;
         max-width: none;
         margin: 0;
@@ -721,4 +679,42 @@ button.cta {
 
         margin-top: 4vh;
     }
+}
+
+/* MARK: Algemeen
+*/
+
+.button-deco {
+    color: white;
+    text-decoration: none;
+}
+
+.button-deco:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.mw-100vw {
+    max-width: 100vw;
+}
+
+.bg-6F8587 {
+    background-color: #6f8587;
+}
+
+.text-wrap {
+    text-wrap: wrap;
+    overflow-wrap: break-word;
+}
+
+.t-col-black {
+    color: black;
+}
+
+.t-col-white {
+    color: white;
+}
+
+.t-deco-link {
+    text-decoration: underline;
 }
