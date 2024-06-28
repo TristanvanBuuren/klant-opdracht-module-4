@@ -38,10 +38,10 @@ CREATE TABLE `admin_login` (
 --
 
 INSERT INTO `admin_login` (`id`, `username`, `password`) VALUES
-(1, 'Tristan', 'admin'),
-(2, 'Joran', 'admin'),
-(3, 'Jaedyn', 'admin'),
-(4, 'Jesse', 'admin'),
+(1, 'Tristan', 'EYL"F7ucV{e>'),
+(2, 'Joran', 'X)pu[JwhZj3n'),
+(3, 'Jaedyn', 'W!=m(/tVaL6['),
+(4, 'Jesse', 'MpDT@4&(GgB>'),
 (5, 'Hendrik', 'u7jt8H-2s}V~');
 
 -- --------------------------------------------------------
