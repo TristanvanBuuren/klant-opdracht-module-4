@@ -143,11 +143,11 @@
   width: 100%;
   height: 15vh;
 
-  border: .2vw solid black;
+  border: 0.2vw solid black;
 
   gap: 1vw;
 
-  padding: .5vw;
+  padding: 0.5vw;
 
   /* background-color: aqua; */
 }

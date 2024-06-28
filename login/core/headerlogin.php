@@ -21,9 +21,10 @@ include($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_con
 </head>
 <body>
 <nav>
+
         <ul>
             <li><a href="../index.php">Home</a></li>
-            <?php if (isset($_SESSION['ingelogd']) && $_SESSION['ingelogd'] === true): ?>
+            <?php if (isset($_SESSION['admin_ingelogd']) && $_SESSION['admin_ingelogd'] === true): ?>
              
                 <li><a href="uitloggen.php">Uitloggen</a></li>
 
@@ -33,7 +34,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/klant-opdracht-module-4/assets/core/db_con
                 
             <?php else: ?>
                
-                <li><a href="adminlogin.php">Inloggen</a></li>
+                
             <?php endif; ?>
         </ul>
     </nav>

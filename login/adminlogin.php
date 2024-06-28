@@ -2,10 +2,6 @@
 include('core/headerlogin.php');
 ?>
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <body>
     <div id="login">
         <h3 class="text-center text-white pt-5">ADMIN Login Page</h3>
@@ -16,19 +12,19 @@ include('core/headerlogin.php');
                         <form id="login-form" class="form" action="" method="post">
                             <h3 class="text-center text-info">ADMIN Login</h3>
                             <div class="form-group">
-                                <label for="username" class="text-info">Username:</label><br>
+                                <label for="username" class="text-info">Naam:</label><br>
                                 <input type="text" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="password" class="text-info">Password:</label><br>
+                                <label for="password" class="text-info">Wachtwoord:</label><br>
                                 <input type="password" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <label for="remember-me" class="text-info"><span>Onthoud mij</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
                             </div>
                             <div id="register-link" class="text-right">
-                                <a href="./login.php" class="text-info">Login here</a>
+                               
                             </div>
                         </form>
                     </div>
@@ -69,12 +65,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #17a2b8;
-        height: 100vh;
-    }
+        body {
+    margin: 0;
+    padding: 0;
+    background-color: #6f8587;
+    height: 100vh;
+}
+a {
+  color: #18123f;
+}
+.text-info {
+    color: #18123f !important;
+}
+.btn-info {
+    color: #fff;
+    background-color: #18123f;
+    border-color: #17a2b8;
+}
+.text-white {
+    color: #18123f !important;
+}
 </style>
 
 <?php
