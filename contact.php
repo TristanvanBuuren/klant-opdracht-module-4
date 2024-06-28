@@ -2,14 +2,8 @@
 include('assets/core/header.php')
 ?>
 
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neem Contact Op</title>
-</head>
-<body>
+
+
 
     <div class="container">
         
@@ -122,8 +116,6 @@ include('assets/core/header.php')
            
         </div>
     </div>
-</body>
-</html>
 <?php
 include('assets/core/footer.php');
 ?>
