@@ -1,6 +1,7 @@
 <?php
-include('assets/core/header.php');
+include('assets/core/header.php')
 ?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
