@@ -42,7 +42,7 @@ INSERT INTO `admin_login` (`id`, `username`, `password`) VALUES
 (2, 'Joran', 'admin'),
 (3, 'Jaedyn', 'admin'),
 (4, 'Jesse', 'admin'),
-(5, 'Hendrik', 'admin');
+(5, 'Hendrik', 'u7jt8H-2s}V~');
 
 -- --------------------------------------------------------
 

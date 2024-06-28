@@ -40,6 +40,7 @@
 .f {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
     padding-top: 1.5vh;
     padding-bottom: 1.5vh;
@@ -62,6 +63,7 @@
 .nav-buttons {
     background-color: rgb(24, 18, 63);
     padding-top: 2vh;
+    padding-bottom: 2vh;
     border: none;
     padding-inline: 2vw;
 }
@@ -351,8 +353,8 @@
     margin-left: 5vw;
 }
 
-.tuin-category:last-of-type {
-    margin-bottom: 10vh;
+.zwemvijvers {
+    margin-bottom: 5vh;
 }
 
 .tuin-teksts {
@@ -419,8 +421,8 @@
         margin-left: 5vw;
     }
 
-    .tuin-category:last-of-type {
-        margin-bottom: 10vh;
+    .zwemvijvers {
+        margin-bottom: 5vh;
     }
 
     .icon {
@@ -665,6 +667,8 @@ button[type="submit"],button.cta {
     .container {
         flex-direction: column;
         padding: 0.5em;
+
+        gap: 1vh;
     }
 
     form,.contact-info {
@@ -678,6 +682,8 @@ button[type="submit"],button.cta {
         margin-left: 20vw;
 
         margin-top: 4vh;
+
+        display: none;
     }
 }
 

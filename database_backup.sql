@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2024 at 01:47 PM
+-- Generation Time: Jun 28, 2024 at 11:24 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -64,7 +64,9 @@ CREATE TABLE `contact` (
 INSERT INTO `contact` (`id`, `naam`, `email`, `bericht`, `tijd_gemaakt`) VALUES
 (45, 'wadaw', 'HendrikHogendijk@klantopdracht.glu.nlawd', 'adwawd', '2024-06-26 13:35:14'),
 (46, 'Hendrik Hogendijkdddddddddd', 'HendrikHogendijk@klantopdracht.glu.nlddddddddddd', 'ddddddddddd', '2024-06-26 13:38:53'),
-(47, 'Hendrik Hogendijkdddddddddddddddddddddddd', 'HendrikHogendijk@klantopdracht.glu.nlddddddddddd', 'ddddddddddd', '2024-06-26 13:41:49');
+(47, 'Hendrik Hogendijkdddddddddddddddddddddddd', 'HendrikHogendijk@klantopdracht.glu.nlddddddddddd', 'ddddddddddd', '2024-06-26 13:41:49'),
+(48, 'a', 'a@a.com', 'a', '2024-06-26 14:36:41'),
+(49, 'udfd', '123@123.nl', 'test', '2024-06-28 11:07:30');
 
 -- --------------------------------------------------------
 
@@ -107,6 +109,7 @@ INSERT INTO `hoofdpagina` (`id`, `foto`, `review`, `persoon`) VALUES
 CREATE TABLE `informatie` (
   `info_id` int(11) NOT NULL,
   `info_type` int(11) NOT NULL,
+  `info_prefix` varchar(255) NOT NULL,
   `info_tekst` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -114,13 +117,13 @@ CREATE TABLE `informatie` (
 -- Dumping data for table `informatie`
 --
 
-INSERT INTO `informatie` (`info_id`, `info_type`, `info_tekst`) VALUES
-(1, 1, 'Tel: +31 6 12 34 56 78'),
-(2, 1, 'Sms: 06 00 00 00 00'),
-(3, 1, 'email: HendrikHogendijk@klantopdract.glu.nl'),
-(4, 2, 'Maandag - vrijdag: 07.00 - 17.00 uur'),
-(5, 2, 'Zaterdag: Op afspraak'),
-(6, 2, 'Zondag: Gesloten');
+INSERT INTO `informatie` (`info_id`, `info_type`, `info_prefix`, `info_tekst`) VALUES
+(1, 1, 'tel', '+31612345678'),
+(2, 1, 'sms', '0600000000'),
+(3, 1, 'mailto', 'HendrikHogendijk@klantopdract.glu.nl'),
+(4, 2, 'Maandag - vrijdag:', '07.00 - 17.00 uur'),
+(5, 2, 'Zaterdag:', 'Op afspraak'),
+(6, 2, 'Zondag:', 'Gesloten');
 
 -- --------------------------------------------------------
 
@@ -190,7 +193,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `hoofdpagina`
