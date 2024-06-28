@@ -1,3 +1,4 @@
+<?php include ('assets/core/header.php'); ?>
 <main>
     <div class="introductie">
         <img class="introductie-foto" src="assets/img/henrik.png">
@@ -42,6 +43,6 @@
     </div>
     </div>
 
-<?php include ('assets/core/header.php'); ?>
+
 <?php include ('assets/core/footer.php'); ?>
 </main>
