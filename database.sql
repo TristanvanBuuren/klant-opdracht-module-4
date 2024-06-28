@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2024 at 02:27 PM
+-- Generation Time: Jun 28, 2024 at 10:24 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,7 +41,8 @@ INSERT INTO `admin_login` (`id`, `username`, `password`) VALUES
 (1, 'Tristan', 'admin'),
 (2, 'Joran', 'admin'),
 (3, 'Jaedyn', 'admin'),
-(4, 'Jesse', 'admin');
+(4, 'Jesse', 'admin'),
+(5, 'Hendrik', 'admin');
 
 -- --------------------------------------------------------
 
@@ -56,15 +57,6 @@ CREATE TABLE `contact` (
   `bericht` text NOT NULL,
   `tijd_gemaakt` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `contact`
---
-
-INSERT INTO `contact` (`id`, `naam`, `email`, `bericht`, `tijd_gemaakt`) VALUES
-(45, 'wadaw', 'HendrikHogendijk@klantopdracht.glu.nlawd', 'adwawd', '2024-06-26 13:35:14'),
-(46, 'Hendrik Hogendijkdddddddddd', 'HendrikHogendijk@klantopdracht.glu.nlddddddddddd', 'ddddddddddd', '2024-06-26 13:38:53'),
-(47, 'Hendrik Hogendijkdddddddddddddddddddddddd', 'HendrikHogendijk@klantopdracht.glu.nlddddddddddd', 'ddddddddddd', '2024-06-26 13:41:49');
 
 -- --------------------------------------------------------
 
@@ -123,26 +115,6 @@ INSERT INTO `informatie` (`info_id`, `info_type`, `info_prefix`, `info_tekst`) V
 (5, 2, 'Zaterdag:', 'Op afspraak'),
 (6, 2, 'Zondag:', 'Gesloten');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `login`
---
-
-CREATE TABLE `login` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `login`
---
-
-INSERT INTO `login` (`id`, `username`, `password`) VALUES
-(1, 'jesse', '$2y$10$kGwAneO6kVza25wESt11u.uNQTJGlJqAiI9XVz89GDRplkbrFMJTq'),
-(2, 'dddd', '$2y$10$glMoD2I7FYGcOslC.h9zWub0TUGo6ymSacJDhSaiwefsZkX61vd.m');
-
 --
 -- Indexes for dumped tables
 --
@@ -172,12 +144,6 @@ ALTER TABLE `informatie`
   ADD PRIMARY KEY (`info_id`);
 
 --
--- Indexes for table `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -185,31 +151,25 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `admin_login`
 --
 ALTER TABLE `admin_login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `hoofdpagina`
 --
 ALTER TABLE `hoofdpagina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4353;
 
 --
 -- AUTO_INCREMENT for table `informatie`
 --
 ALTER TABLE `informatie`
-  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `login`
---
-ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
